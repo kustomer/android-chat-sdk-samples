@@ -23,5 +23,6 @@ This example app demonstrates how to use Kustomer's Login and Describe functiona
 have `org.tracking` level permissions.
 `apiKey = {your API key}`
 2. In a root-level `local.properties` file, add your Organization's secret key as below. This is
-used to sign JWT tokens to login users
+used to sign JWT tokens to login users.
 `jwtSecret = {your secret key}`
+Your org secret key is available from https://{your-org}.api.kustomerapp.com/v1/auth/customer/settings

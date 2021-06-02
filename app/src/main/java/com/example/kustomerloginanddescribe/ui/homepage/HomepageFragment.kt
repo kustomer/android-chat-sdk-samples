@@ -55,8 +55,8 @@ class HomepageFragment : Fragment() {
             // TODO: register device
             //Kustomer.getInstance().registerDevice()
 
-            sdkTitle.text =
-                "${resources.getString(R.string.app_name)} : v.${BuildConfig.VERSION_NAME}"
+            appTitle.text =
+                "${resources.getString(R.string.app_name)} v.${BuildConfig.VERSION_NAME}"
 
             viewModel.unreadCount.observe(viewLifecycleOwner, {
                 unreadCount.text = "$it Unread count"
