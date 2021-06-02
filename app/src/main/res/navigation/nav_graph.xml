@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/orgSettingsFragment">
+
+
+    <fragment
+        android:id="@+id/orgSettingsFragment"
+        android:name="com.kustomer.chatandroidexample.ui.org.OrgSettingsFragment"
+        android:label="OrgSettingsFragment"
+        tools:layout="@layout/fragment_org_settings">
+
+        <action
+            android:id="@+id/open_homepage"
+            app:destination="@id/homepageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="com.kustomer.chatandroidexample.ui.homepage.HomepageFragment"
+        android:label="HomepageFragment"
+        tools:layout="@layout/fragment_homepage">
+
+        <action
+            android:id="@+id/open_describe_conversation"
+            app:destination="@id/describeConversationFragment" />
+        <action
+            android:id="@+id/open_describe_customer"
+            app:destination="@id/describeCustomerFragment" />
+        <action
+            android:id="@+id/open_login"
+            app:destination="@id/loginFragment" />
+
+        <action
+            android:id="@+id/open_logout"
+            app:destination="@id/logoutBottomSheet" />
+
+        <action
+            android:id="@+id/open_org_settings"
+            app:destination="@id/orgSettingsFragment" />
+
+        <action
+            android:id="@+id/open_override_schedule"
+            app:destination="@id/overrideScheduleBottomSheet" />
+    </fragment>
+    <fragment
+        android:id="@+id/describeConversationFragment"
+        android:name="com.kustomer.chatandroidexample.ui.describe.conversation.DescribeConversationFragment"
+        android:label="DescribeConversationFragment"
+        tools:layout="@layout/fragment_describe_conversation" />
+    <fragment
+        android:id="@+id/describeCustomerFragment"
+        android:name="com.kustomer.chatandroidexample.ui.describe.customer.DescribeCustomerFragment"
+        android:label="DescribeCustomerFragment"
+        tools:layout="@layout/fragment_describe_customer" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.kustomer.chatandroidexample.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/open_generate_jwt"
+            app:destination="@id/generateJwtBottomSheet" />
+    </fragment>
+    <dialog
+        android:id="@+id/logoutBottomSheet"
+        android:name="com.kustomer.chatandroidexample.ui.logout.LogoutBottomSheet"
+        android:label="LogoutBottomSheet"
+        tools:layout="@layout/bottomsheet_logout" />
+    <dialog
+        android:id="@+id/generateJwtBottomSheet"
+        android:name="com.kustomer.chatandroidexample.ui.login.generatejwt.GenerateJwtBottomSheet"
+        android:label="GenerateJwtBottomSheet"
+        tools:layout="@layout/bottomsheet_generate_jwt" />
+
+    <dialog
+        android:id="@+id/overrideScheduleBottomSheet"
+        android:name="com.kustomer.chatandroidexample.ui.schedule.OverrideScheduleBottomSheet"
+        android:label="OverrideScheduleBottomSheet"
+        tools:layout="@layout/bottomsheet_override_schedule" />
+</navigation>

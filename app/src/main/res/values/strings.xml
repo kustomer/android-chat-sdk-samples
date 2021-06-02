@@ -1,3 +1,60 @@
 <resources>
     <string name="app_name">Kustomer Login and Describe</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="org_api_key">Org API Key *</string>
+    <string name="enter_api_key">Enter API key</string>
+    <string name="override_business_schedule">Override Business Schedule</string>
+    <string name="enter_business_schedule_id">Enter Business Schedule ID</string>
+    <string name="set_kb_brand">Set KB Brand</string>
+    <string name="set_kb_writeup">Use the KB ID from your Organization to fetch a specific Brand and it\'s associated articles and categories</string>
+    <string name="enter_kb_id">Enter KB ID</string>
+    <string name="enter_brand_id">Enter Brand ID</string>
+    <string name="set_brand_id">Set Brand ID</string>
+    <string name="set_brand_writeup">Use the Brand ID to fetch a settings for a specific brand</string>
+    <string name="set_language">Set Language</string>
+    <string name="select_language">Select language</string>
+    <string name="update_org_info">Update Org Info</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="describe_conversation">Describe Conversation</string>
+    <string name="conversation_id">Conversation ID *</string>
+    <string name="describe_conversation_writeup">Find this ID by visiting the Customer timeline and using the ID found in the URL</string>
+    <string name="enter_conversation_id">Enter conversation ID</string>
+    <string name="custom_field">Custom Field *</string>
+    <string name="enter_custom_field">Enter custom field</string>
+    <string name="field_value">Field Value *</string>
+    <string name="enter_field_value">Enter field value</string>
+    <string name="update">Update</string>
+    <string name="launch_sdk">Launch SDK</string>
+    <string name="describe_current_customer">Describe Current Customer</string>
+    <string name="field_type">Field Type *</string>
+    <string name="select_field_type">Select field type</string>
+    <string name="generate">Generate</string>
+    <string name="jwt_writeup">Use your secret key and email to generate the ID, only use it for the sample app.</string>
+    <string name="generate_jwt_id">Generate JWT ID</string>
+    <string name="enter_jwt_id">Enter JWT ID</string>
+    <string name="jwt_id">JWT ID</string>
+    <string name="log_in">Log In</string>
+    <string name="enter_email">Enter email</string>
+    <string name="email">Email</string>
+    <string name="enter_secret_key">Enter secret key</string>
+    <string name="secrete_key">Secrete Key</string>
+    <string name="are_you_sure_you_want_to_log_out">Are you sure you want to log out?</string>
+    <string name="log_out">Log Out</string>
+    <string name="cancel">Cancel</string>
+    <string name="or">OR</string>
+    <string name="external_id">External Id</string>
+    <string name="set_assistant_id">Set Assistant ID</string>
+    <string name="enter_assistant_id">Enter Assistant ID</string>
+    <string name="enter_schedule_id">Enter schedule id</string>
+    <string name="save">Save</string>
+    <string name="hide_new_conversation_button">Hide new conversation Button</string>
+
 </resources>

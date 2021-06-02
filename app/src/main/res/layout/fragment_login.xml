@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/kus_margin_normal"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/cancel_button"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cancel" />
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/kus_margin_large"
+        android:text="@string/log_in" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/kus_margin_small"
+        android:text="@string/jwt_id" />
+
+    <EditText
+        android:id="@+id/etAPIKey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/kus_margin_normal"
+        android:background="@drawable/rounded_border"
+        android:hint="@string/enter_jwt_id"
+        android:inputType="text"
+        android:padding="@dimen/kus_margin_normal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/kus_margin_small"
+        android:text="@string/generate_jwt_id" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/kus_margin_small"
+        android:text="@string/jwt_writeup" />
+
+    <Button
+        android:id="@+id/generate"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/generate" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/kus_margin_normal"
+        android:paddingStart="@dimen/kus_margin_normal"
+        android:paddingEnd="@dimen/kus_margin_normal"
+        android:text="@string/update" />
+
+</LinearLayout>
