@@ -1,21 +1,21 @@
 package com.example.kustomerloginanddescribe
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.kustomerloginanddescribe.databinding.MainActivityBinding
-import com.example.kustomerloginanddescribe.ui.main.MainFragment
+import androidx.appcompat.app.AppCompatActivity
+import com.example.kustomerloginanddescribe.databinding.ActivityMainBinding
+import com.example.kustomerloginanddescribe.ui.homepage.HomepageFragment
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: MainActivityBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = MainActivityBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, MainFragment.newInstance())
+                .replace(R.id.fragment_container, HomepageFragment())
                 .commitNow()
         }
     }
