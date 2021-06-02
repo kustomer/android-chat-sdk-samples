@@ -1,5 +1,6 @@
-package com.example.kustomerloginanddescribe
+package com.example.kustomerloginanddescribe.utils
 
+import com.example.kustomerloginanddescribe.BuildConfig
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import io.jsonwebtoken.security.Keys
