@@ -4,19 +4,18 @@ This example app demonstrates how to use Kustomer's Login and Describe functiona
 
 ## Project Structure
 
-.
-├── manifests
-    ├── AndroidManifest.xml  # App manifest file where Application class is defined
-├── java/com.example.kustomerloginanddescribe
-│   ├── ui.home
-│       ├── itemviews  # Custom views for the example app
-│       ├── HomepageFragment.kt   # A fragment to launch and interact with the Kustomer SDK
-│       ├── HomepageViewModel.kt  # ViewModel that contains most of the calls to the Kustomer SDK
-│   ├── utils                     # Utils and miscellaneous code for the example app
-│   ├── KustomerApplication.kt    # Custom application class where KustomerSDK is initialized
-│   ├── MainActivity.kt           # Entry point to the example app
-└── ...
-
+    .
+    ├── manifests
+        ├── AndroidManifest.xml  # App manifest file where Application class is defined
+    ├── java/com.example.kustomerloginanddescribe
+    │   ├── ui.home
+    │       ├── itemviews  # Custom views for the example app
+    │       ├── HomepageFragment.kt   # A fragment to launch and interact with the Kustomer SDK
+    │       ├── HomepageViewModel.kt  # ViewModel that contains most of the calls to the Kustomer SDK
+    │   ├── utils                     # Utils and miscellaneous code for the example app
+    │   ├── KustomerApplication.kt    # Custom application class where KustomerSDK is initialized
+    │   ├── MainActivity.kt           # Entry point to the example app
+    └── ...
 
 ## Running the project
 1. Clone this repository
