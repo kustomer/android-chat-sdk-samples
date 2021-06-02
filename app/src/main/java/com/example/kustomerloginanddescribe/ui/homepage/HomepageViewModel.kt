@@ -96,6 +96,10 @@ class HomepageViewModel : ViewModel() {
     fun describeConversation() {
         // TODO: Implement describe conversation
     }
+
+    private fun loginToMyApp() {
+        // Your app's login logic
+    }
 }
 
 @Suppress("UNCHECKED_CAST")
