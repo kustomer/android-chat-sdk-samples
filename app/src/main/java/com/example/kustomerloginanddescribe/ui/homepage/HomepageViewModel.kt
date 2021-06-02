@@ -9,8 +9,12 @@ import com.example.kustomerloginanddescribe.ui.homepage.itemviews.BlankItem
 import com.example.kustomerloginanddescribe.ui.homepage.itemviews.DarkModeItem
 import com.example.kustomerloginanddescribe.ui.homepage.itemviews.HeaderItem
 import com.example.kustomerloginanddescribe.model.HomepageData
+import com.example.kustomerloginanddescribe.utils.JwtGenerator
 import com.kustomer.core.models.KusResult
+import com.kustomer.core.models.chat.KusCustomerDescribeAttributes
+import com.kustomer.core.models.chat.KusPhone
 import com.kustomer.ui.Kustomer
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
 class HomepageViewModel : ViewModel() {
@@ -45,29 +49,48 @@ class HomepageViewModel : ViewModel() {
                     is KusResult.Success -> Log.d(
                         "HomepageFragment", "New conversation created with id ${it.data.id}"
                     )
-                    KusResult.Loading -> Log.d(
-                        "HomepageFragment", "New conversation is loading"
-                    )
                 }
             }
         }
     }
 
     fun logIn() {
-        // Call Kustomer.logIn() immediately after the user logs in to your app the first time.
-        // Do not call logIn every time the app loads because this requires you to generate a new
-        // JWT on each app load.
-        // TODO: Implement Kustomer login
+        viewModelScope.launch {
+            loginToMyApp()
+            // Call Kustomer.logIn() immediately after the user logs in to your app the first time.
+            // Do not call logIn every time the app loads because this requires you to generate a new
+            // JWT on each app load.
+
+            // TODO: add example of tracking logged in state
+
+            val jwt = JwtGenerator.getJwt()
+            Kustomer.getInstance().logIn(jwt) {
+                when (it) {
+                    is KusResult.Error -> Log.e(
+                        "HomepageFragment", "Customer login failed ${it.exception}"
+                    )
+                    is KusResult.Success -> Log.d(
+                        "HomepageFragment",
+                        "Customer logged in with externalId ${it.data.externalId}"
+                    )
+                }
+            }
+        }
     }
 
     fun logOut() {
         // Call Kustomer.logOut to log the customer out from chat and remove all conversations from device
-        // TODO: Implement Kustomer logout
+        Kustomer.getInstance().logOut()
         // TODO: deregister device
     }
 
     fun describeCustomer() {
-        // TODO: Implement describe customer
+        // TODO: use describeCustomer
+        viewModelScope.launch {
+            val customerAttributes =
+                KusCustomerDescribeAttributes(phones = listOf(KusPhone("555-555-5555")))
+            Kustomer.getInstance().describeCustomer(customerAttributes)
+        }
     }
 
     fun describeConversation() {
