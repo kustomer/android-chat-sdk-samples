@@ -14,6 +14,7 @@ android {
         versionCode 1
         versionName "1.0"
         buildConfigField "String", "API_KEY", "\""+getApiKey()+"\""
+        buildConfigField "String", "JWT_SECRET", "\""+getJwtSecret()+"\""
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,6 +42,12 @@ def getApiKey() {
     Properties properties = new Properties()
     properties.load(project.rootProject.file('local.properties').newDataInputStream())
     return properties.getProperty("apiKey")
+}
+
+def getJwtSecret() {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    return properties.getProperty("jwtSecret")
 }
 
 dependencies {

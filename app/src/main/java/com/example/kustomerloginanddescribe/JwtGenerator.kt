@@ -15,17 +15,17 @@ import java.util.Date
  * */
 object JwtGenerator {
 
-    private fun getSigningKey(secret: String): Key? {
-        val keyBytes = secret.toByteArray(StandardCharsets.UTF_8)
+    private fun getSigningKey(): Key? {
+        val keyBytes = BuildConfig.JWT_SECRET.toByteArray(StandardCharsets.UTF_8)
         return Keys.hmacShaKeyFor(keyBytes)
     }
 
-    fun getJwt(secret: String, key: String, value: String): String? {
+    fun getJwt(key: String, value: String): String? {
         return Jwts.builder()
             .setHeaderParam("typ", "JWT")
             .claim(key, value)
             .setIssuedAt(Date())
-            .signWith(getSigningKey(secret), SignatureAlgorithm.HS256)
+            .signWith(getSigningKey(), SignatureAlgorithm.HS256)
             .compact()
     }
 }
