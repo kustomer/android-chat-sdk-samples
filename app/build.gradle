@@ -65,6 +65,7 @@ dependencies {
 
     //JWT library
     api 'io.jsonwebtoken:jjwt-api:0.10.7'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.10.7'
     runtimeOnly('io.jsonwebtoken:jjwt-orgjson:0.10.7') {
         exclude group: 'org.json', module: 'json' //provided by Android natively

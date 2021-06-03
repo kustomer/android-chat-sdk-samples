@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kustomerloginanddescribe.databinding.ActivityMainBinding
 import com.example.kustomerloginanddescribe.ui.homepage.HomepageFragment
+import com.example.kustomerloginanddescribe.ui.homepage.LoginFragment
 
 class MainActivity : AppCompatActivity() {
 
