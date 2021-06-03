@@ -20,7 +20,7 @@
         android:id="@+id/homepageFragment"
         android:name="com.kustomer.chatandroidexample.ui.homepage.HomepageFragment"
         android:label="HomepageFragment"
-        tools:layout="@layout/fragment_homepage">
+        tools:layout="@layout/fragment_guest">
 
         <action
             android:id="@+id/open_describe_conversation"

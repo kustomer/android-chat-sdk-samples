@@ -14,10 +14,9 @@ import com.kustomer.core.models.KusResult
 import com.kustomer.core.models.chat.KusCustomerDescribeAttributes
 import com.kustomer.core.models.chat.KusPhone
 import com.kustomer.ui.Kustomer
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
-class HomepageViewModel : ViewModel() {
+class GuestViewModel : ViewModel() {
 
     val homepageList = listOf(
         HomepageData.DEFAULT_WIDGET,
@@ -80,6 +79,7 @@ class HomepageViewModel : ViewModel() {
 
     fun logOut() {
         // Call Kustomer.logOut to log the customer out from chat and remove all conversations from device
+        // TODO: log user out from app
         Kustomer.getInstance().logOut()
         // TODO: deregister device
     }
@@ -103,7 +103,7 @@ class HomepageViewModel : ViewModel() {
 }
 
 @Suppress("UNCHECKED_CAST")
-class HomepageViewModelFactory : ViewModelProvider.NewInstanceFactory() {
+class GuestViewModelFactory : ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel> create(modelClass: Class<T>) =
-        (HomepageViewModel() as T)
+        (GuestViewModel() as T)
 }

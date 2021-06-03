@@ -41,6 +41,18 @@ class LoginFragment : Fragment() {
             appTitle.text =
                 "${resources.getString(R.string.app_name)} v.${BuildConfig.VERSION_NAME}"
 
+            viewModel.navigateToOrderHistory.observe(viewLifecycleOwner, {
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, GuestFragment())
+                    .commitNow()
+            })
+
+            viewModel.navigateToGuestScreen.observe(viewLifecycleOwner, {
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, GuestFragment())
+                    .commitNow()
+            })
+
             logIn.setOnClickListener {
                 viewModel.logIn(emailEt.text.toString(), passwordEt.text.toString())
             }
