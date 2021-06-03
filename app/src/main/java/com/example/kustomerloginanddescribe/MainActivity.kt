@@ -31,4 +31,13 @@ class MainActivity : AppCompatActivity() {
     //         navHostFragment.navController
     //     return navController.navigateUp() || super.onSupportNavigateUp()
     // }
+
+    // override fun onBackPressed() {
+    //     super.onBackPressed()
+    //     val navHostFragment =
+    //         supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
+    //     val navController = navHostFragment.navController
+    //
+    //     navController.popBackStack()
+    // }
 }

@@ -2,6 +2,7 @@ package com.example.kustomerloginanddescribe.ui.homepage
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -38,17 +39,23 @@ class LoginFragment : Fragment() {
                 "${resources.getString(R.string.app_name)} v.${BuildConfig.VERSION_NAME}"
 
             viewModel.navigateToOrderHistory.observe(viewLifecycleOwner, {
-                val action =
-                    LoginFragmentDirections
-                        .actionLoginFragmentToOrderHistoryFragment(emailEt.text.toString())
-                findNavController().navigate(action)
+                if (it != null) {
+                    val action =
+                        LoginFragmentDirections
+                            .actionLoginFragmentToOrderHistoryFragment(emailEt.text.toString())
+                    findNavController().navigate(action)
+                    viewModel.loginEventComplete()
+                }
             })
 
             viewModel.navigateToGuestScreen.observe(viewLifecycleOwner, {
-                val action =
-                    LoginFragmentDirections
-                        .actionLoginFragmentToGuestFragment()
-                findNavController().navigate(action)
+                if (true == it) {
+                    val action =
+                        LoginFragmentDirections
+                            .actionLoginFragmentToGuestFragment()
+                    findNavController().navigate(action)
+                    viewModel.navigateToGuestScreenComplete()
+                }
             })
 
             logIn.setOnClickListener {

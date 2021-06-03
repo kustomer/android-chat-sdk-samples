@@ -2,6 +2,7 @@ package com.example.kustomerloginanddescribe.ui.homepage
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +17,7 @@ class OrderHistoryFragment : Fragment() {
     private var _binding: FragmentOrderHistoryBinding? = null
     private val binding get() = _binding!!
 
-    val args: OrderHistoryFragmentArgs by navArgs()
+    private val args: OrderHistoryFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +33,10 @@ class OrderHistoryFragment : Fragment() {
         viewModelFactory = OrderHistoryViewModelFactory()
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(OrderHistoryViewModel::class.java)
+
+        Log.d("backstack", parentFragmentManager.backStackEntryCount.toString())
+        Log.d("backstack", parentFragmentManager.getBackStackEntryAt(0).toString())
+
 
         binding.run {
             welcome.text = "Welcome, ${args.email}"

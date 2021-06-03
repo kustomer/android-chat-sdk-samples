@@ -28,7 +28,7 @@ class LoginViewModel : ViewModel() {
         _navigateToGuestScreen.value = true
     }
 
-    private fun navigateToGuestScreenComplete() {
+    fun navigateToGuestScreenComplete() {
         _navigateToGuestScreen.value = null
     }
 
@@ -36,7 +36,7 @@ class LoginViewModel : ViewModel() {
         _navigateToOrderHistory.value = email
     }
 
-    private fun loginEventComplete() {
+    fun loginEventComplete() {
         _navigateToOrderHistory.value = null
     }
 }
