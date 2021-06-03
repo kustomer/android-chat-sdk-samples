@@ -11,11 +11,6 @@ import com.example.kustomerloginanddescribe.databinding.LoginFragmentBinding
 import com.kustomer.core.BuildConfig
 
 class LoginFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = LoginFragment()
-    }
-
     private lateinit var viewModel: LoginViewModel
     private lateinit var viewModelFactory: LoginViewModelFactory
 
@@ -25,7 +20,7 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = LoginFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -43,7 +38,7 @@ class LoginFragment : Fragment() {
 
             viewModel.navigateToOrderHistory.observe(viewLifecycleOwner, {
                 parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, GuestFragment())
+                    .replace(R.id.fragment_container, OrderHistoryFragment())
                     .commitNow()
             })
 
