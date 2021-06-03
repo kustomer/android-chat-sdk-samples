@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import com.example.kustomerloginanddescribe.databinding.FragmentOrderHistoryBinding
 
 class OrderHistoryFragment : Fragment() {
@@ -14,6 +15,8 @@ class OrderHistoryFragment : Fragment() {
 
     private var _binding: FragmentOrderHistoryBinding? = null
     private val binding get() = _binding!!
+
+    val args: OrderHistoryFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,10 +34,7 @@ class OrderHistoryFragment : Fragment() {
             .get(OrderHistoryViewModel::class.java)
 
         binding.run {
-            welcome.text = "Welcome, friend"
-            order1.title.text = "Order 1"
-            order2.title.text = "Order 2"
-            order3.title.text = "Order 3"
+            welcome.text = "Welcome, ${args.email}"
         }
     }
 }

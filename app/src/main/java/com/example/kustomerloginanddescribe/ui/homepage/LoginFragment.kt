@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.kustomerloginanddescribe.R
 import com.example.kustomerloginanddescribe.databinding.LoginFragmentBinding
 import com.kustomer.core.BuildConfig
@@ -37,15 +38,17 @@ class LoginFragment : Fragment() {
                 "${resources.getString(R.string.app_name)} v.${BuildConfig.VERSION_NAME}"
 
             viewModel.navigateToOrderHistory.observe(viewLifecycleOwner, {
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, OrderHistoryFragment())
-                    .commitNow()
+                val action =
+                    LoginFragmentDirections
+                        .actionLoginFragmentToOrderHistoryFragment(emailEt.text.toString())
+                findNavController().navigate(action)
             })
 
             viewModel.navigateToGuestScreen.observe(viewLifecycleOwner, {
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, GuestFragment())
-                    .commitNow()
+                val action =
+                    LoginFragmentDirections
+                        .actionLoginFragmentToGuestFragment()
+                findNavController().navigate(action)
             })
 
             logIn.setOnClickListener {
