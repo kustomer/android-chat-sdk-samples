@@ -19,6 +19,8 @@
     <include
         android:id="@+id/order1"
         layout="@layout/item_order"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcome" />
@@ -26,6 +28,8 @@
     <include
         android:id="@+id/order2"
         layout="@layout/item_order"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/order1" />
@@ -33,6 +37,8 @@
     <include
         android:id="@+id/order3"
         layout="@layout/item_order"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/order2" />
