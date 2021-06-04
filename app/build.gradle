@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -13,8 +14,8 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-        buildConfigField "String", "API_KEY", "\""+getApiKey()+"\""
-        buildConfigField "String", "JWT_SECRET", "\""+getJwtSecret()+"\""
+        buildConfigField "String", "API_KEY", "\"" + getApiKey() + "\""
+        buildConfigField "String", "JWT_SECRET", "\"" + getJwtSecret() + "\""
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

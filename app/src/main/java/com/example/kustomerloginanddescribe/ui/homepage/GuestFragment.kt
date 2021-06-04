@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.kustomerloginanddescribe.KustomerApplication
 import com.example.kustomerloginanddescribe.R
-import com.example.kustomerloginanddescribe.databinding.FragmentHomepageBinding
+import com.example.kustomerloginanddescribe.databinding.FragmentGuestBinding
 import com.example.kustomerloginanddescribe.ui.homepage.itemviews.BlankItemView
 import com.example.kustomerloginanddescribe.model.HomepageData
 import com.example.kustomerloginanddescribe.model.HomepageItemListener
@@ -24,12 +24,12 @@ import com.kustomer.core.models.chat.KusConversation
 import com.kustomer.ui.Kustomer
 import com.kustomer.ui.adapters.KusAdapter
 
-class HomepageFragment : Fragment() {
+class GuestFragment : Fragment() {
 
-    private lateinit var viewModel: HomepageViewModel
-    private lateinit var viewModelFactory: HomepageViewModelFactory
+    private lateinit var viewModel: GuestViewModel
+    private lateinit var viewModelFactory: GuestViewModelFactory
 
-    private var _binding: FragmentHomepageBinding? = null
+    private var _binding: FragmentGuestBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var application: KustomerApplication
@@ -38,16 +38,16 @@ class HomepageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomepageBinding.inflate(inflater, container, false)
+        _binding = FragmentGuestBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModelFactory = HomepageViewModelFactory()
+        viewModelFactory = GuestViewModelFactory()
         viewModel = ViewModelProvider(this, viewModelFactory)
-            .get(HomepageViewModel::class.java)
+            .get(GuestViewModel::class.java)
         application = requireActivity().application as KustomerApplication
 
         setupAdapter()
@@ -65,14 +65,6 @@ class HomepageFragment : Fragment() {
             viewModel.activeConversationIds.observe(viewLifecycleOwner, {
                 activeConversationCount.text = "${it.size} Active conversations"
             })
-
-            logIn.setOnClickListener {
-                viewModel.logIn()
-            }
-
-            logOut.setOnClickListener {
-                viewModel.logOut()
-            }
         }
     }
 

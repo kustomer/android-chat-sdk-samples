@@ -1,9 +1,19 @@
 package com.example.kustomerloginanddescribe.ui.homepage
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
 class LoginViewModel : ViewModel() {
+
+    private val _navigateToOrderHistory = MutableLiveData<String?>()
+    val navigateToOrderHistory
+        get() = _navigateToOrderHistory
+
+    private val _navigateToGuestScreen = MutableLiveData<Boolean?>()
+    val navigateToGuestScreen
+        get() = _navigateToGuestScreen
+
     fun logIn(email: String, password: String) {
         // Handle your app's login process as usual.
         // Once your login succeeds, you can continue to log the user in to Kustomer
@@ -15,11 +25,19 @@ class LoginViewModel : ViewModel() {
     }
 
     fun continueAsGuest() {
-        // Navigate to logged out state
+        _navigateToGuestScreen.value = true
+    }
+
+    fun navigateToGuestScreenComplete() {
+        _navigateToGuestScreen.value = null
     }
 
     private fun onLoginSucceeded(email: String) {
-        // Log in to Kustomer and navigate to order screen
+        _navigateToOrderHistory.value = email
+    }
+
+    fun loginEventComplete() {
+        _navigateToOrderHistory.value = null
     }
 }
 
