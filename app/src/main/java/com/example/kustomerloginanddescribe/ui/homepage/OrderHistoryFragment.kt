@@ -10,6 +10,11 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.example.kustomerloginanddescribe.R
 import com.example.kustomerloginanddescribe.databinding.FragmentOrderHistoryBinding
+import com.example.kustomerloginanddescribe.utils.OrderData
+import com.kustomer.core.models.KusResult
+import com.kustomer.core.models.chat.KusCustomerDescribeAttributes
+import com.kustomer.core.models.chat.KusEmail
+import com.kustomer.ui.Kustomer
 
 class OrderHistoryFragment : Fragment() {
     private lateinit var viewModel: OrderHistoryViewModel
@@ -35,31 +40,37 @@ class OrderHistoryFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(OrderHistoryViewModel::class.java)
 
+        // TODO: comment about how to use describe
+        viewModel.describeCustomer(args.email)
+
         binding.run {
             welcome.text = "Welcome, ${args.email}"
 
-            order1.title.text = "Order 1"
-            order1.description.text = "2 personal pan pizzas"
-            order1.image.setImageResource(R.drawable.ic_baseline_cake_24)
-            order1.root.setOnClickListener {
-                Log.d("Order 1", "clicked")
+            // TODO: add log out button
+
+            val firstOrder = OrderData.orders[0]
+            order1.title.text = firstOrder.title
+            order1.description.text = firstOrder.description
+            order1.image.setImageResource(firstOrder.image)
+            order1.helpButton.setOnClickListener {
+                viewModel.openExistingOrNewOrderChat(firstOrder.orderNumber)
             }
 
-            order2.title.text = "Order 2"
-            order2.description.text = "1 large cheese pizza"
-            order2.image.setImageResource(R.drawable.ic_baseline_cake_24)
-            order2.root.setOnClickListener {
-                Log.d("Order 2", "clicked")
+            val secondOrder = OrderData.orders[1]
+            order2.title.text = secondOrder.title
+            order2.description.text = secondOrder.description
+            order2.image.setImageResource(secondOrder.image)
+            order2.helpButton.setOnClickListener {
+                viewModel.openExistingOrNewOrderChat(firstOrder.orderNumber)
             }
 
-
-            order3.title.text = "Order 3"
-            order3.description.text = "1 medium cheese pizza, 1 Cesar Salad"
-            order3.image.setImageResource(R.drawable.ic_baseline_cake_24)
-            order3.root.setOnClickListener {
-                Log.d("Order 3", "clicked")
+            val thirdOrder = OrderData.orders[2]
+            order3.title.text = thirdOrder.title
+            order3.description.text = thirdOrder.description
+            order3.image.setImageResource(thirdOrder.image)
+            order3.helpButton.setOnClickListener {
+                viewModel.openExistingOrNewOrderChat(firstOrder.orderNumber)
             }
-
         }
     }
 }
