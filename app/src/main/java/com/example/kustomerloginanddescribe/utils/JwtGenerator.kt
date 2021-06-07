@@ -25,7 +25,7 @@ object JwtGenerator {
     fun getJwt(): String {
         return Jwts.builder()
             .setHeaderParam("typ", "JWT")
-            .claim("externalId", Math.random().toString())
+            .claim("externalId", (0..100).random())
             .setIssuedAt(Date())
             .signWith(getSigningKey(), SignatureAlgorithm.HS256)
             .compact()

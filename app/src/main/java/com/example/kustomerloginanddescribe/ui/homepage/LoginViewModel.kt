@@ -3,6 +3,10 @@ package com.example.kustomerloginanddescribe.ui.homepage
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
+import com.example.kustomerloginanddescribe.utils.JwtGenerator
+import com.kustomer.ui.Kustomer
+import kotlinx.coroutines.launch
 
 class LoginViewModel : ViewModel() {
 
@@ -25,6 +29,9 @@ class LoginViewModel : ViewModel() {
     }
 
     private fun onLoginSucceeded(email: String) {
+        viewModelScope.launch {
+            Kustomer.getInstance().logIn(JwtGenerator.getJwt())
+        }
         _navigateToOrderHistory.value = email
     }
 
@@ -39,7 +46,6 @@ class LoginViewModel : ViewModel() {
     fun navigateToGuestScreenComplete() {
         _navigateToGuestScreen.value = null
     }
-
 }
 
 @Suppress("UNCHECKED_CAST")
