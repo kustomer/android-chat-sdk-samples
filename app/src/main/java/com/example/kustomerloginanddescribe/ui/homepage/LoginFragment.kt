@@ -65,6 +65,12 @@ class LoginFragment : Fragment() {
             logInAsGuest.setOnClickListener { viewModel.continueAsGuest() }
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        binding.emailEt.text.clear()
+        binding.passwordEt.text.clear()
+    }
 }
 
 /**
@@ -73,9 +79,11 @@ class LoginFragment : Fragment() {
  * - Add clarifying comments on all calls to Kustomer, links to supporting docs, etc
  * - Do we need better app icon/image assets, etc?
  * - Rewrite history before making public
+ * - remove JWT generator -- link to online generator and paste in, include sample JWT token,
+ * - Add toasts for success/failures
  *
  * Questions:
- * - Should we demonstrate registering/deregistering for push in this example?
+ * - Should we demonstrate registering/deregistering for push in this example? Y
  * - Should we convert the Guest view to something simpler than RecyclerView to minimize code?
  * -
 * */

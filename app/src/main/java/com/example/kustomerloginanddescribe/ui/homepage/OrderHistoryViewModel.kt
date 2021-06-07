@@ -30,7 +30,9 @@ class OrderHistoryViewModel : ViewModel() {
                             Kustomer.getInstance().describeConversation(
                                 it.data.id,
                                 mapOf(Pair("orderId", orderNumber))
-                            )
+                            ) {
+                                // TODO: TOAST
+                            }
                         }
                     }
                 }
@@ -43,6 +45,10 @@ class OrderHistoryViewModel : ViewModel() {
             Kustomer.getInstance()
                 .describeCustomer(KusCustomerDescribeAttributes(emails = listOf(KusEmail(email))))
         }
+    }
+
+    fun describeConversation() {
+
     }
 
     fun logOut() {

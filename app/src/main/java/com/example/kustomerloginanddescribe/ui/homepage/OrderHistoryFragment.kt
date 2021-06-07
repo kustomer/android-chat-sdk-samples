@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.kustomerloginanddescribe.R
 import com.example.kustomerloginanddescribe.databinding.FragmentOrderHistoryBinding
@@ -48,6 +49,7 @@ class OrderHistoryFragment : Fragment() {
 
             logOutButton.setOnClickListener {
                 viewModel.logOut()
+                findNavController().popBackStack()
             }
 
             val firstOrder = OrderData.orders[0]
