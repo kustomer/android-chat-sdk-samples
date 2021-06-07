@@ -46,7 +46,9 @@ class OrderHistoryFragment : Fragment() {
         binding.run {
             welcome.text = "Welcome, ${args.email}"
 
-            // TODO: add log out button
+            logOutButton.setOnClickListener {
+                viewModel.logOut()
+            }
 
             val firstOrder = OrderData.orders[0]
             order1.title.text = firstOrder.title

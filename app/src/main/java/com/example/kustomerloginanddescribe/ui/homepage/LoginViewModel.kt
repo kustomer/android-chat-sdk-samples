@@ -15,13 +15,21 @@ class LoginViewModel : ViewModel() {
         get() = _navigateToGuestScreen
 
     fun logIn(email: String, password: String) {
-        // Handle your app's login process as usual.
-        // Once your login succeeds, you can continue to log the user in to Kustomer
+        // Handle your app's login process as usual. Here, we'll assume that app login always succeeds and returns true
+        // Once app login succeeds, you can continue to log the user in to Kustomer
         val loginIsValid = true
 
         if (loginIsValid) {
             onLoginSucceeded(email)
         }
+    }
+
+    private fun onLoginSucceeded(email: String) {
+        _navigateToOrderHistory.value = email
+    }
+
+    fun loginEventComplete() {
+        _navigateToOrderHistory.value = null
     }
 
     fun continueAsGuest() {
@@ -32,13 +40,6 @@ class LoginViewModel : ViewModel() {
         _navigateToGuestScreen.value = null
     }
 
-    private fun onLoginSucceeded(email: String) {
-        _navigateToOrderHistory.value = email
-    }
-
-    fun loginEventComplete() {
-        _navigateToOrderHistory.value = null
-    }
 }
 
 @Suppress("UNCHECKED_CAST")

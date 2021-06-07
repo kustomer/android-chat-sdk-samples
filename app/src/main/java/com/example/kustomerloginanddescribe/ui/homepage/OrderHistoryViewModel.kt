@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.example.kustomerloginanddescribe.utils.JwtGenerator
 import com.kustomer.core.models.KusResult
 import com.kustomer.core.models.chat.KusCustomerDescribeAttributes
 import com.kustomer.core.models.chat.KusEmail
@@ -41,6 +42,14 @@ class OrderHistoryViewModel : ViewModel() {
         viewModelScope.launch {
             Kustomer.getInstance()
                 .describeCustomer(KusCustomerDescribeAttributes(emails = listOf(KusEmail(email))))
+        }
+    }
+
+    fun logOut() {
+        viewModelScope.launch {
+            Kustomer.getInstance().logOut()
+
+            // TODO: "log out" of app
         }
     }
 }

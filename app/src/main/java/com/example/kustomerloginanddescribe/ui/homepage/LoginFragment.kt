@@ -66,3 +66,16 @@ class LoginFragment : Fragment() {
         }
     }
 }
+
+/**
+ * TODO:
+ * - Add license
+ * - Add clarifying comments on all calls to Kustomer, links to supporting docs, etc
+ * - Do we need better app icon/image assets, etc?
+ * - Rewrite history before making public
+ *
+ * Questions:
+ * - Should we demonstrate registering/deregistering for push in this example?
+ * - Should we convert the Guest view to something simpler than RecyclerView to minimize code?
+ * -
+* */

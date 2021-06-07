@@ -52,9 +52,6 @@ class GuestFragment : Fragment() {
 
         setupAdapter()
         binding.run {
-            // TODO: register device
-            //Kustomer.getInstance().registerDevice()
-
             appTitle.text =
                 "${resources.getString(R.string.app_name)} v.${BuildConfig.VERSION_NAME}"
 
@@ -103,20 +100,6 @@ class GuestFragment : Fragment() {
                         when (result) {
                             is KusResult.Success -> {
                                 Log.d("HomepageFragment", "New conversation created successfully")
-                                Kustomer.getInstance().describeConversation(
-                                    result.data.id, mapOf("orderIdStr" to result.data.id)
-                                ) {
-                                    when (it) {
-                                        is KusResult.Success ->
-                                            Log.d(
-                                                "HomepageFragment",
-                                                "Described new conversation successfully"
-                                            )
-                                        else -> Log.d(
-                                            "HomepageFragment", "New conversation describe failed"
-                                        )
-                                    }
-                                }
                             }
                             is KusResult.Error -> Log.e(
                                 "HomepageFragment",
