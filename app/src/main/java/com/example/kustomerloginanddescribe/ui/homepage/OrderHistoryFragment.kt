@@ -12,6 +12,7 @@ import androidx.navigation.fragment.navArgs
 import com.example.kustomerloginanddescribe.R
 import com.example.kustomerloginanddescribe.databinding.FragmentOrderHistoryBinding
 import com.example.kustomerloginanddescribe.utils.OrderData
+import com.google.android.material.snackbar.Snackbar
 import com.kustomer.core.models.KusResult
 import com.kustomer.core.models.chat.KusCustomerDescribeAttributes
 import com.kustomer.core.models.chat.KusEmail
@@ -43,6 +44,13 @@ class OrderHistoryFragment : Fragment() {
 
         // TODO: comment about how to use describe
         viewModel.describeCustomer(args.email)
+
+        viewModel.snackbarEvent.observe(viewLifecycleOwner, {
+            if (it != null) {
+                Snackbar.make(requireView(), it, Snackbar.LENGTH_LONG).show()
+                viewModel.snackbarComplete()
+            }
+        })
 
         binding.run {
             welcome.text = "Welcome, ${args.email}"

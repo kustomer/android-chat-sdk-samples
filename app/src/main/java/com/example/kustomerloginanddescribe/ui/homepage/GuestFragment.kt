@@ -17,6 +17,7 @@ import com.example.kustomerloginanddescribe.model.HomepageItemListener
 import com.example.kustomerloginanddescribe.ui.homepage.itemviews.DarkModeItemView
 import com.example.kustomerloginanddescribe.ui.homepage.itemviews.HeaderItemView
 import com.example.kustomerloginanddescribe.ui.homepage.itemviews.HomepageItemView
+import com.google.android.material.snackbar.Snackbar
 import com.kustomer.core.BuildConfig
 import com.kustomer.core.models.KusResult
 import com.kustomer.core.models.KusWidgetType
@@ -62,6 +63,13 @@ class GuestFragment : Fragment() {
             viewModel.activeConversationIds.observe(viewLifecycleOwner, {
                 activeConversationCount.text = "${it.size} Active conversations"
             })
+
+            viewModel.snackbarEvent.observe(viewLifecycleOwner, {
+                if (it != null) {
+                    Snackbar.make(requireView(), it, Snackbar.LENGTH_LONG).show()
+                    viewModel.snackbarComplete()
+                }
+            })
         }
     }
 
@@ -92,6 +100,7 @@ class GuestFragment : Fragment() {
 
     private val homepageItemListener = object : HomepageItemListener {
         override fun onClick(option: HomepageData) {
+            // TODO: move actions to viewmodel
 
             when (option) {
                 HomepageData.DEFAULT_WIDGET -> Kustomer.getInstance().open()

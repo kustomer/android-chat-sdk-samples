@@ -1,5 +1,6 @@
 package com.example.kustomerloginanddescribe.ui.homepage
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
@@ -29,6 +30,19 @@ class GuestViewModel : ViewModel() {
 
     val activeConversationIds = liveData {
         emitSource(Kustomer.getInstance().observeActiveConversationIds())
+    }
+
+    private val _snackbarEvent = MutableLiveData<String?>()
+    val snackbarEvent
+        get() = _snackbarEvent
+
+
+    fun showSnackbar(message: String) {
+        _snackbarEvent.value = message
+    }
+
+    fun snackbarComplete() {
+        _snackbarEvent.value = null
     }
 }
 

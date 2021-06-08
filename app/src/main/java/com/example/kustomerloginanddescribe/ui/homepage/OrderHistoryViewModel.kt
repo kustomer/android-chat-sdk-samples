@@ -1,10 +1,10 @@
 package com.example.kustomerloginanddescribe.ui.homepage
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.kustomerloginanddescribe.utils.JwtGenerator
 import com.kustomer.core.models.KusResult
 import com.kustomer.core.models.chat.KusCustomerDescribeAttributes
 import com.kustomer.core.models.chat.KusEmail
@@ -15,11 +15,21 @@ class OrderHistoryViewModel : ViewModel() {
 
     private var orderToConversationMap = mutableMapOf<Int, String>()
 
+    private val _snackbarEvent = MutableLiveData<String?>()
+    val snackbarEvent
+        get() = _snackbarEvent
+
     fun openExistingOrNewOrderChat(orderNumber: Int) {
         viewModelScope.launch {
             val convoId = orderToConversationMap[orderNumber]
             if (convoId != null) {
-                Kustomer.getInstance().openConversationWithId(convoId) {}
+                Kustomer.getInstance().openConversationWithId(convoId) {
+                    if (it is KusResult.Success) {
+                        showSnackbar("Open conversation sucess")
+                    } else {
+                        showSnackbar("Open conversation error")
+                    }
+                }
             } else {
                 Kustomer.getInstance().openNewConversation {
                     Log.d("openNew", it.dataOrNull?.id ?: "")
@@ -31,7 +41,11 @@ class OrderHistoryViewModel : ViewModel() {
                                 it.data.id,
                                 mapOf(Pair("orderId", orderNumber))
                             ) {
-                                // TODO: TOAST
+                                if (it is KusResult.Success) {
+                                    showSnackbar("Describe conversation success")
+                                } else {
+                                    showSnackbar("Describe conversation error")
+                                }
                             }
                         }
                     }
@@ -43,12 +57,14 @@ class OrderHistoryViewModel : ViewModel() {
     fun describeCustomer(email: String) {
         viewModelScope.launch {
             Kustomer.getInstance()
-                .describeCustomer(KusCustomerDescribeAttributes(emails = listOf(KusEmail(email))))
+                .describeCustomer(KusCustomerDescribeAttributes(emails = listOf(KusEmail(email)))) {
+                    if (it is KusResult.Success) {
+                        showSnackbar("Describe customer success")
+                    } else {
+                        showSnackbar("Describe customer error")
+                    }
+                }
         }
-    }
-
-    fun describeConversation() {
-
     }
 
     fun logOut() {
@@ -57,6 +73,14 @@ class OrderHistoryViewModel : ViewModel() {
 
             // TODO: "log out" of app
         }
+    }
+
+    fun showSnackbar(message: String) {
+        _snackbarEvent.value = message
+    }
+
+    fun snackbarComplete() {
+        _snackbarEvent.value = null
     }
 }
 
