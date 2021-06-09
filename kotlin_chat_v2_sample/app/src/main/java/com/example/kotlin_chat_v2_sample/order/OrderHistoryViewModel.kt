@@ -1,4 +1,4 @@
-package com.example.kotlin_chat_v2_sample.ui.homepage
+package com.example.kotlin_chat_v2_sample.order
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.example.kotlin_chat_v2_sample.ui.homepage
+package com.example.kotlin_chat_v2_sample.order
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle

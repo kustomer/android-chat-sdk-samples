@@ -1,4 +1,4 @@
-package com.example.kotlin_chat_v2_sample.ui.homepage
+package com.example.kotlin_chat_v2_sample.login
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
