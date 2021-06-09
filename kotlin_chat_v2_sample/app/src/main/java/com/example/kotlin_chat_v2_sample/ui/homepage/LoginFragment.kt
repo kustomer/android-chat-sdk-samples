@@ -1,4 +1,4 @@
-package com.example.kustomerloginanddescribe.ui.homepage
+package com.example.kotlin_chat_v2_sample.ui.homepage
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.kustomerloginanddescribe.R
-import com.example.kustomerloginanddescribe.databinding.LoginFragmentBinding
+import com.example.kotlin_chat_v2_sample.R
+import com.example.kotlin_chat_v2_sample.databinding.LoginFragmentBinding
 import com.google.android.material.snackbar.Snackbar
 import com.kustomer.core.BuildConfig
 

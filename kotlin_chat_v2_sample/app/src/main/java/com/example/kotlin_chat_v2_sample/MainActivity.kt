@@ -1,8 +1,8 @@
-package com.example.kustomerloginanddescribe
+package com.example.kotlin_chat_v2_sample
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.kustomerloginanddescribe.databinding.ActivityMainBinding
+import com.example.kotlin_chat_v2_sample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

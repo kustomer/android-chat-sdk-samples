@@ -1,4 +1,4 @@
-package com.example.kustomerloginanddescribe.utils
+package com.example.kotlin_chat_v2_sample.utils
 
 enum class HomepageData(val title: String, val description: String) {
     DEFAULT_WIDGET(

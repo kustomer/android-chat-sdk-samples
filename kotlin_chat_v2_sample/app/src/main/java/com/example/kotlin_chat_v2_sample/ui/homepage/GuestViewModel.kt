@@ -1,13 +1,13 @@
-package com.example.kustomerloginanddescribe.ui.homepage
+package com.example.kotlin_chat_v2_sample.ui.homepage
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
-import com.example.kustomerloginanddescribe.ui.homepage.itemviews.BlankItem
-import com.example.kustomerloginanddescribe.ui.homepage.itemviews.DarkModeItem
-import com.example.kustomerloginanddescribe.ui.homepage.itemviews.HeaderItem
-import com.example.kustomerloginanddescribe.utils.HomepageData
+import com.example.kotlin_chat_v2_sample.ui.homepage.itemviews.BlankItem
+import com.example.kotlin_chat_v2_sample.ui.homepage.itemviews.DarkModeItem
+import com.example.kotlin_chat_v2_sample.ui.homepage.itemviews.HeaderItem
+import com.example.kotlin_chat_v2_sample.utils.HomepageData
 import com.kustomer.core.models.KusResult
 import com.kustomer.core.models.KusWidgetType
 import com.kustomer.core.models.chat.KusConversation

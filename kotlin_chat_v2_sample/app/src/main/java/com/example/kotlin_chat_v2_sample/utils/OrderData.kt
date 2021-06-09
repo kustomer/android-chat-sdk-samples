@@ -1,6 +1,6 @@
-package com.example.kustomerloginanddescribe.utils
+package com.example.kotlin_chat_v2_sample.utils
 
-import com.example.kustomerloginanddescribe.R
+import com.example.kotlin_chat_v2_sample.R
 
 class OrderData {
 
