@@ -18,25 +18,25 @@ SDK can be found in ViewModel classes.
 or continuing as guest. On successful login, the user is also logged in to Kustomer chat.Advanced
 
 #### Order History -
-    - Describes the customer with their email address
+- Describes the customer with their email address
 
-    - Shows order details for three orders. Each order has a "Get Help" button that will
-    open a Kustomer conversation and describe that conversation with the order number.
+- Shows order details for three orders. Each order has a "Get Help" button that will
+open a Kustomer conversation and describe that conversation with the order number.
 
-    - Here we also create an in-memory map of order number to conversation ID, so the first tap on "Get help"
-    will open a new conversation, but subsequent taps will open the existing conversation for that order
+- Here we also create an in-memory map of order number to conversation ID, so the first tap on "Get help"
+will open a new conversation, but subsequent taps will open the existing conversation for that order
 
 #### Guest - Shows some basic interactions with the Kustomer SDK
-    - Open the Kustomer Chat widget with your organization's default settings for whether to show the
-    knowledge base, chat, or both
+- Open the Kustomer Chat widget with your organization's default settings for whether to show the
+knowledge base, chat, or both
 
-    - Open a new conversation
+- Open a new conversation
 
-    - Open the Kustomer Chat widget with chat only, regardless of your organization's settings
+- Open the Kustomer Chat widget with chat only, regardless of your organization's settings
 
-    - Open the Kustomer Chat widget with knowledge base only, regardless of your organization's settings
+- Open the Kustomer Chat widget with knowledge base only, regardless of your organization's settings
 
-    - Toggle between light mode and dark mode
+- Toggle between light mode and dark mode
 
 ## Running the project
 1. Clone this repository
