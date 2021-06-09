@@ -51,11 +51,11 @@ class GuestFragment : Fragment() {
             appTitle.text = resources.getString(R.string.app_name, BuildConfig.VERSION_NAME)
 
             viewModel.unreadCount.observe(viewLifecycleOwner, {
-                unreadCount.text = "$it Unread count"
+                unreadCount.text = getString(R.string.unread_count, it)
             })
 
             viewModel.activeConversationIds.observe(viewLifecycleOwner, {
-                activeConversationCount.text = "${it.size} Active conversations"
+                activeConversationCount.text = getString(R.string.active_conversations, it.size)
             })
 
             viewModel.snackbarEvent.observe(viewLifecycleOwner, {

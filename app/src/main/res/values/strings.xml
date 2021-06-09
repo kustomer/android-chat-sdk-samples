@@ -60,5 +60,7 @@
     <string name="fake_password_hint">fake password</string>
     <string name="log_in_as_guest">Log In as Guest</string>
     <string name="get_help">Get Help</string>
+    <string name="active_conversations">%d Active conversations</string>
+    <string name="unread_count">%d Unread count</string>
 
 </resources>

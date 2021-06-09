@@ -48,4 +48,13 @@ knowledge base, chat, or both
 2. In a root-level `local.properties` file, add your Kustomer API key as below. This API key must
 have `org.tracking` level permissions.
 `apiKey = {your API key}`
-3. To test the login functionality, generate a JWT (more details noted in the comments for LoginViewModel.onLoginSucceeded)
+3. To test the login functionality, generate a valid JWT with our org's secret key and paste it in to
+the `jwt` value in `LoginViewModel.kt`. For testing, you can generate a JWT by doing the following:
+    - Go to https://jwt.io/
+    - Fill in the `payload` with either an `email` or `externalId` and ensure that the `iat` was created
+    within the last 15 minutes. You can replace the `iat` with the current Unix Epoc Time calculated by using the
+    language of your choice or a tool like https://www.epochconverter.com/
+    - Paste in your org's secret key from `https://{your-org}.kustomerapp.com/v1/auth/customer/settings`
+![JWT Generator](./screenshots/jwt_generation.png?raw=true "JWT Generator")
+
+
