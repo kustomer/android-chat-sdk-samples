@@ -24,7 +24,7 @@ class DarkModeItemView :
         model: DarkModeItem,
         viewHolder: DarkModeItemViewHolder
     ) {
-        viewHolder.bind(model)
+        viewHolder.bind()
     }
 
     override fun getFeedItemType() = R.layout.item_dark_mode
@@ -42,7 +42,7 @@ class DarkModeItemView :
     ) = oldItem == newItem
 }
 
-class DarkModeItemViewHolder private constructor(val binding: ItemDarkModeBinding) :
+class DarkModeItemViewHolder private constructor(private val binding: ItemDarkModeBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     companion object {
@@ -58,7 +58,7 @@ class DarkModeItemViewHolder private constructor(val binding: ItemDarkModeBindin
         }
     }
 
-    fun bind(data: DarkModeItem) {
+    fun bind() {
 
         val nightModeFlags =
             itemView.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK

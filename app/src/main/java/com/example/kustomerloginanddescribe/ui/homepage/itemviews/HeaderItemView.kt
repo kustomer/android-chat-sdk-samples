@@ -40,7 +40,7 @@ class HeaderItemView :
     ) = oldItem == newItem
 }
 
-class HeaderItemViewHolder private constructor(val binding: ItemHeaderBinding) :
+class HeaderItemViewHolder private constructor(private val binding: ItemHeaderBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     companion object {

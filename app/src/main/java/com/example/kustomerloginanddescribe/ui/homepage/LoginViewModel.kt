@@ -22,7 +22,7 @@ class LoginViewModel : ViewModel() {
     val snackbarEvent
         get() = _snackbarEvent
 
-    fun logIn(email: String, password: String) {
+    fun logIn(email: String) {
         // Handle your app's login process as usual. Here, we'll assume that app login always succeeds and returns true
         // Once app login succeeds, you can continue to log the user in to Kustomer
         val loginIsValid = true
@@ -64,7 +64,7 @@ class LoginViewModel : ViewModel() {
         _navigateToGuestScreen.value = null
     }
 
-    fun showSnackbar(message: String) {
+    private fun showSnackbar(message: String) {
         _snackbarEvent.value = message
     }
 

@@ -7,7 +7,10 @@ import androidx.lifecycle.liveData
 import com.example.kustomerloginanddescribe.ui.homepage.itemviews.BlankItem
 import com.example.kustomerloginanddescribe.ui.homepage.itemviews.DarkModeItem
 import com.example.kustomerloginanddescribe.ui.homepage.itemviews.HeaderItem
-import com.example.kustomerloginanddescribe.model.HomepageData
+import com.example.kustomerloginanddescribe.utils.HomepageData
+import com.kustomer.core.models.KusResult
+import com.kustomer.core.models.KusWidgetType
+import com.kustomer.core.models.chat.KusConversation
 import com.kustomer.ui.Kustomer
 
 class GuestViewModel : ViewModel() {
@@ -15,7 +18,6 @@ class GuestViewModel : ViewModel() {
     val homepageList = listOf(
         HomepageData.DEFAULT_WIDGET,
         HomepageData.NEW_CHAT,
-        HomepageData.OPEN_CONVERSATION_WITH_ID,
         BlankItem(),
         HeaderItem("Overrides"),
         HomepageData.CHAT_ONLY,
@@ -36,13 +38,29 @@ class GuestViewModel : ViewModel() {
     val snackbarEvent
         get() = _snackbarEvent
 
-
-    fun showSnackbar(message: String) {
+    private fun showSnackbar(message: String) {
         _snackbarEvent.value = message
     }
 
     fun snackbarComplete() {
         _snackbarEvent.value = null
+    }
+
+    fun handleClick(option: HomepageData) {
+        when (option) {
+            HomepageData.DEFAULT_WIDGET -> Kustomer.getInstance().open()
+            HomepageData.NEW_CHAT -> Kustomer.getInstance()
+                .openNewConversation { result: KusResult<KusConversation> ->
+                    when (result) {
+                        is KusResult.Success -> {
+                            showSnackbar("New conversation created")
+                        }
+                        is KusResult.Error -> showSnackbar("New conversation creation error")
+                    }
+                }
+            HomepageData.CHAT_ONLY -> Kustomer.getInstance().open(KusWidgetType.CHAT_ONLY)
+            HomepageData.KB_ONLY -> Kustomer.getInstance().open(KusWidgetType.KB_ONLY)
+        }
     }
 }
 

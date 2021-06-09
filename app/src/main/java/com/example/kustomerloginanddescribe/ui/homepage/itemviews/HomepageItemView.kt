@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kustomerloginanddescribe.R
 import com.example.kustomerloginanddescribe.databinding.ItemHomepageBinding
-import com.example.kustomerloginanddescribe.model.HomepageData
-import com.example.kustomerloginanddescribe.model.HomepageItemListener
+import com.example.kustomerloginanddescribe.utils.HomepageData
+import com.example.kustomerloginanddescribe.utils.HomepageItemListener
 import com.kustomer.ui.adapters.KusItemView
 
 class HomepageItemView(

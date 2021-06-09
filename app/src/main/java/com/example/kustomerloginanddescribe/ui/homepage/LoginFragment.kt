@@ -35,8 +35,7 @@ class LoginFragment : Fragment() {
             .get(LoginViewModel::class.java)
 
         binding.run {
-            appTitle.text =
-                "${resources.getString(R.string.app_name)} v.${BuildConfig.VERSION_NAME}"
+            appTitle.text = resources.getString(R.string.app_name, BuildConfig.VERSION_NAME)
 
             viewModel.navigateToOrderHistory.observe(viewLifecycleOwner, {
                 if (it != null) {
@@ -66,7 +65,7 @@ class LoginFragment : Fragment() {
             })
 
             logIn.setOnClickListener {
-                viewModel.logIn(emailEt.text.toString(), passwordEt.text.toString())
+                viewModel.logIn(emailEt.text.toString())
             }
 
             logInAsGuest.setOnClickListener { viewModel.continueAsGuest() }
@@ -84,11 +83,9 @@ class LoginFragment : Fragment() {
  * TODO:
  * - Add license
  * - Add clarifying comments on all calls to Kustomer, links to supporting docs, etc
- * - Do we need better app icon/image assets, etc?
  * - Rewrite history before making public
  * - Register for push
  *
  * Questions:
  * - Should we convert the Guest view to something simpler than RecyclerView to minimize code?
- * -
  * */

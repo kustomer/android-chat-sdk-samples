@@ -29,5 +29,4 @@
         android:src="@drawable/ic_kus_chevron_right"
         android:tint="?attr/colorPrimary" />
 
-
 </RelativeLayout>

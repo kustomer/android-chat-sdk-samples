@@ -1,7 +1,6 @@
 package com.example.kustomerloginanddescribe.ui.homepage
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,17 +11,13 @@ import com.example.kustomerloginanddescribe.KustomerApplication
 import com.example.kustomerloginanddescribe.R
 import com.example.kustomerloginanddescribe.databinding.FragmentGuestBinding
 import com.example.kustomerloginanddescribe.ui.homepage.itemviews.BlankItemView
-import com.example.kustomerloginanddescribe.model.HomepageData
-import com.example.kustomerloginanddescribe.model.HomepageItemListener
+import com.example.kustomerloginanddescribe.utils.HomepageData
+import com.example.kustomerloginanddescribe.utils.HomepageItemListener
 import com.example.kustomerloginanddescribe.ui.homepage.itemviews.DarkModeItemView
 import com.example.kustomerloginanddescribe.ui.homepage.itemviews.HeaderItemView
 import com.example.kustomerloginanddescribe.ui.homepage.itemviews.HomepageItemView
 import com.google.android.material.snackbar.Snackbar
 import com.kustomer.core.BuildConfig
-import com.kustomer.core.models.KusResult
-import com.kustomer.core.models.KusWidgetType
-import com.kustomer.core.models.chat.KusConversation
-import com.kustomer.ui.Kustomer
 import com.kustomer.ui.adapters.KusAdapter
 
 class GuestFragment : Fragment() {
@@ -100,25 +95,7 @@ class GuestFragment : Fragment() {
 
     private val homepageItemListener = object : HomepageItemListener {
         override fun onClick(option: HomepageData) {
-            // TODO: move actions to viewmodel
-
-            when (option) {
-                HomepageData.DEFAULT_WIDGET -> Kustomer.getInstance().open()
-                HomepageData.NEW_CHAT -> Kustomer.getInstance()
-                    .openNewConversation { result: KusResult<KusConversation> ->
-                        when (result) {
-                            is KusResult.Success -> {
-                                Log.d("HomepageFragment", "New conversation created successfully")
-                            }
-                            is KusResult.Error -> Log.e(
-                                "HomepageFragment",
-                                "New conversation create failed ${result.exception}"
-                            )
-                        }
-                    }
-                HomepageData.CHAT_ONLY -> Kustomer.getInstance().open(KusWidgetType.CHAT_ONLY)
-                HomepageData.KB_ONLY -> Kustomer.getInstance().open(KusWidgetType.KB_ONLY)
-            }
+            viewModel.handleClick(option)
         }
     }
 }

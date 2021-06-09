@@ -31,14 +31,14 @@ class OrderHistoryViewModel : ViewModel() {
                     }
                 }
             } else {
-                Kustomer.getInstance().openNewConversation {
-                    Log.d("openNew", it.dataOrNull?.id ?: "")
-                    if (it is KusResult.Success) {
-                        orderToConversationMap[orderNumber] = it.data.id
+                Kustomer.getInstance().openNewConversation { conversationResult ->
+                    Log.d("openNew", conversationResult.dataOrNull?.id ?: "")
+                    if (conversationResult is KusResult.Success) {
+                        orderToConversationMap[orderNumber] = conversationResult.data.id
 
                         viewModelScope.launch {
                             Kustomer.getInstance().describeConversation(
-                                it.data.id,
+                                conversationResult.data.id,
                                 mapOf(Pair("orderId", orderNumber))
                             ) {
                                 if (it is KusResult.Success) {
@@ -71,11 +71,11 @@ class OrderHistoryViewModel : ViewModel() {
         viewModelScope.launch {
             Kustomer.getInstance().logOut()
 
-            // TODO: "log out" of app
+            // Handle your app's normal logout functionality
         }
     }
 
-    fun showSnackbar(message: String) {
+    private fun showSnackbar(message: String) {
         _snackbarEvent.value = message
     }
 

@@ -22,7 +22,7 @@ class BlankItemView :
         model: BlankItem,
         viewHolder: BlankItemViewHolder
     ) {
-        viewHolder.bind(model)
+        viewHolder.bind()
     }
 
     override fun getFeedItemType() = R.layout.item_blank
@@ -40,7 +40,7 @@ class BlankItemView :
     ) = oldItem == newItem
 }
 
-class BlankItemViewHolder private constructor(private val binding: ItemBlankBinding) :
+class BlankItemViewHolder private constructor(binding: ItemBlankBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     companion object {
@@ -56,7 +56,7 @@ class BlankItemViewHolder private constructor(private val binding: ItemBlankBind
         }
     }
 
-    fun bind(model: BlankItem) {}
+    fun bind() {}
 }
 
 data class BlankItem(val show: Boolean? = true)

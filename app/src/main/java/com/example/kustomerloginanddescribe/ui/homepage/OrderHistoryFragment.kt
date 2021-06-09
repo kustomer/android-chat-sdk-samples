@@ -2,7 +2,6 @@ package com.example.kustomerloginanddescribe.ui.homepage
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,10 +12,6 @@ import com.example.kustomerloginanddescribe.R
 import com.example.kustomerloginanddescribe.databinding.FragmentOrderHistoryBinding
 import com.example.kustomerloginanddescribe.utils.OrderData
 import com.google.android.material.snackbar.Snackbar
-import com.kustomer.core.models.KusResult
-import com.kustomer.core.models.chat.KusCustomerDescribeAttributes
-import com.kustomer.core.models.chat.KusEmail
-import com.kustomer.ui.Kustomer
 
 class OrderHistoryFragment : Fragment() {
     private lateinit var viewModel: OrderHistoryViewModel
@@ -42,7 +37,6 @@ class OrderHistoryFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(OrderHistoryViewModel::class.java)
 
-        // TODO: comment about how to use describe
         viewModel.describeCustomer(args.email)
 
         viewModel.snackbarEvent.observe(viewLifecycleOwner, {
@@ -53,7 +47,7 @@ class OrderHistoryFragment : Fragment() {
         })
 
         binding.run {
-            welcome.text = "Welcome, ${args.email}"
+            welcome.text = getString(R.string.welcome, args.email)
 
             logOutButton.setOnClickListener {
                 viewModel.logOut()
