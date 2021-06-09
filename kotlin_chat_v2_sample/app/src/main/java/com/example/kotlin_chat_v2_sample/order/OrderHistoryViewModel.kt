@@ -82,6 +82,7 @@ class OrderHistoryViewModel : ViewModel() {
         viewModelScope.launch {
             Kustomer.getInstance().logOut()
 
+            Kustomer.getInstance().deregisterDeviceForPushNotifications()
             // Handle your app's normal logout functionality
         }
     }

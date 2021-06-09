@@ -3,6 +3,7 @@ package com.example.kotlin_chat_v2_sample
 import android.app.Application
 import android.util.Log
 import android.widget.Toast
+import com.kustomer.core.models.KusResult
 import com.kustomer.ui.Kustomer
 
 class CustomApplication : Application() {
@@ -19,6 +20,10 @@ class CustomApplication : Application() {
                 // Always initialize the Kustomer SDK in your Application class
                 Kustomer.init(application = this, apiKey = BuildConfig.API_KEY) {
                     Log.d("KustomerApplication", "Kustomer initialized: ${it.dataOrNull}")
+
+                    if (it is KusResult.Success) {
+                        Kustomer.getInstance().registerDevice()
+                    }
                 }
             } catch (e: AssertionError) {
 
