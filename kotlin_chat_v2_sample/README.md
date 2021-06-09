@@ -14,13 +14,14 @@ This example app demonstrates how to use Kustomer's Login and Describe functiona
 The app has three screens, each composed of a Fragment and ViewModel. All calls to the Kustomer
 SDK can be found in ViewModel classes.
 
-#### Login -
-- Allows logging in to the app to view an order history (any email/password combo will succeed),
-or continuing as guest. On successful login, the user is also logged in to Kustomer chat.Advanced
+#### Login Screen
+- Allows logging in to the app to view an Order History screen (any email/password combo will succeed),
+or continuing to a Guest Screen without orders. On successful login, the user is also logged in to Kustomer Chat
+
 ![Login Screen](./screenshots/login_screen.png?raw=true "Login Screen")
 
 
-#### Order History -
+#### Order History Screen
 - Describes the customer with their email address
 
 - Shows order details for three orders. Each order has a "Get Help" button that will
@@ -28,9 +29,11 @@ open a Kustomer conversation and describe that conversation with the order numbe
 
 - Here we also create an in-memory map of order number to conversation ID, so the first tap on "Get help"
 will open a new conversation, but subsequent taps will open the existing conversation for that order
+
 ![Order History Screen](./screenshots/order_history_screen.png?raw=true "Order History Screen")
 
-#### Guest - Shows some basic interactions with the Kustomer SDK
+#### Guest Screen
+- Shows some basic interactions with the Kustomer SDK
 - Open the Kustomer Chat widget with your organization's default settings for whether to show the
 knowledge base, chat, or both
 
@@ -41,6 +44,7 @@ knowledge base, chat, or both
 - Open the Kustomer Chat widget with knowledge base only, regardless of your organization's settings
 
 - Toggle between light mode and dark mode
+
 ![Guest Screen](./screenshots/guest_screen.png?raw=true "Guest Screen")
 
 ## Running the project
