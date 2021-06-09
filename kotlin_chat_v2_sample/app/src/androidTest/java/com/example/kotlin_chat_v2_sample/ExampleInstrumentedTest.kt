@@ -1,4 +1,4 @@
-package com.example.kustomerloginanddescribe
+package com.example.kotlin_chat_v2_sample
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

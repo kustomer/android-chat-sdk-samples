@@ -1,12 +1,12 @@
-package com.example.kustomerloginanddescribe.ui.homepage.itemviews
+package com.example.kotlin_chat_v2_sample.ui.homepage.itemviews
 
 import android.content.res.Configuration
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kustomerloginanddescribe.R
-import com.example.kustomerloginanddescribe.databinding.ItemDarkModeBinding
+import com.example.kotlin_chat_v2_sample.R
+import com.example.kotlin_chat_v2_sample.databinding.ItemDarkModeBinding
 import com.kustomer.ui.adapters.KusItemView
 
 class DarkModeItemView :

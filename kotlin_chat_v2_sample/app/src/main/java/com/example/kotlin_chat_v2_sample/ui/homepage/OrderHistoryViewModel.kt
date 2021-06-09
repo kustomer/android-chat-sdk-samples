@@ -1,4 +1,4 @@
-package com.example.kustomerloginanddescribe.ui.homepage
+package com.example.kotlin_chat_v2_sample.ui.homepage
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

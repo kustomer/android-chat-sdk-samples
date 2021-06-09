@@ -1,2 +1,2 @@
-rootProject.name = "Kustomer Login and Describe"
+rootProject.name = "Kustomer Chat v2 Sample"
 include ':app'

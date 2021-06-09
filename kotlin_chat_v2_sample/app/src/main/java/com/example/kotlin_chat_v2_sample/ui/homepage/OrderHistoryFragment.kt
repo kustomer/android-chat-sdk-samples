@@ -1,4 +1,4 @@
-package com.example.kustomerloginanddescribe.ui.homepage
+package com.example.kotlin_chat_v2_sample.ui.homepage
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.kustomerloginanddescribe.R
-import com.example.kustomerloginanddescribe.databinding.FragmentOrderHistoryBinding
-import com.example.kustomerloginanddescribe.utils.OrderData
+import com.example.kotlin_chat_v2_sample.R
+import com.example.kotlin_chat_v2_sample.databinding.FragmentOrderHistoryBinding
+import com.example.kotlin_chat_v2_sample.utils.OrderData
 import com.google.android.material.snackbar.Snackbar
 
 class OrderHistoryFragment : Fragment() {

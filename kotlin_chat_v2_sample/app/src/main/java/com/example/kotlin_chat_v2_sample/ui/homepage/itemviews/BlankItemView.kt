@@ -1,10 +1,10 @@
-package com.example.kustomerloginanddescribe.ui.homepage.itemviews
+package com.example.kotlin_chat_v2_sample.ui.homepage.itemviews
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kustomerloginanddescribe.R
-import com.example.kustomerloginanddescribe.databinding.ItemBlankBinding
+import com.example.kotlin_chat_v2_sample.R
+import com.example.kotlin_chat_v2_sample.databinding.ItemBlankBinding
 import com.kustomer.ui.adapters.KusItemView
 
 class BlankItemView :

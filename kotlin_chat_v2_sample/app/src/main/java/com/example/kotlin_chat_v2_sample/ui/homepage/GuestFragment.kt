@@ -1,4 +1,4 @@
-package com.example.kustomerloginanddescribe.ui.homepage
+package com.example.kotlin_chat_v2_sample.ui.homepage
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,15 +7,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.example.kustomerloginanddescribe.CustomApplication
-import com.example.kustomerloginanddescribe.R
-import com.example.kustomerloginanddescribe.databinding.FragmentGuestBinding
-import com.example.kustomerloginanddescribe.ui.homepage.itemviews.BlankItemView
-import com.example.kustomerloginanddescribe.utils.HomepageData
-import com.example.kustomerloginanddescribe.utils.HomepageItemListener
-import com.example.kustomerloginanddescribe.ui.homepage.itemviews.DarkModeItemView
-import com.example.kustomerloginanddescribe.ui.homepage.itemviews.HeaderItemView
-import com.example.kustomerloginanddescribe.ui.homepage.itemviews.HomepageItemView
+import com.example.kotlin_chat_v2_sample.CustomApplication
+import com.example.kotlin_chat_v2_sample.R
+import com.example.kotlin_chat_v2_sample.databinding.FragmentGuestBinding
+import com.example.kotlin_chat_v2_sample.ui.homepage.itemviews.BlankItemView
+import com.example.kotlin_chat_v2_sample.utils.HomepageData
+import com.example.kotlin_chat_v2_sample.utils.HomepageItemListener
+import com.example.kotlin_chat_v2_sample.ui.homepage.itemviews.DarkModeItemView
+import com.example.kotlin_chat_v2_sample.ui.homepage.itemviews.HeaderItemView
+import com.example.kotlin_chat_v2_sample.ui.homepage.itemviews.HomepageItemView
 import com.google.android.material.snackbar.Snackbar
 import com.kustomer.core.BuildConfig
 import com.kustomer.ui.adapters.KusAdapter
