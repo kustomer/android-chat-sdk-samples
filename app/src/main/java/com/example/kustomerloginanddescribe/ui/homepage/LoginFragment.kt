@@ -78,14 +78,3 @@ class LoginFragment : Fragment() {
         binding.passwordEt.text.clear()
     }
 }
-
-/**
- * TODO:
- * - Add license
- * - Add clarifying comments on all calls to Kustomer, links to supporting docs, etc
- * - Rewrite history before making public
- * - Register for push
- *
- * Questions:
- * - Should we convert the Guest view to something simpler than RecyclerView to minimize code?
- * */
