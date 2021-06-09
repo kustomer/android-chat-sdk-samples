@@ -46,6 +46,8 @@ class LoginViewModel : ViewModel() {
                     _navigateToOrderHistory.value = email
                 } else {
                     showSnackbar("Login failed")
+                    // Continue to order history, though customer will not be logged in to chat
+                    _navigateToOrderHistory.value = email
                 }
             }
         }

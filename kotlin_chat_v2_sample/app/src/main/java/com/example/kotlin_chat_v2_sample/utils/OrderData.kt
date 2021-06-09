@@ -7,12 +7,12 @@ class OrderData {
     companion object {
         val orders =
             listOf(
-                Order("Order 123", 123, "2 personal pan pizzas", R.drawable.ic_baseline_cake_24),
-                Order("Order 456", 456, "1 large cheese pizza", R.drawable.ic_baseline_cake_24),
+                Order("Order 123", 123, "2 chocolate cakes", R.drawable.ic_baseline_cake_24),
+                Order("Order 456", 456, "1 cheese cake", R.drawable.ic_baseline_cake_24),
                 Order(
                     "Order 789",
                     789,
-                    "1 medium cheese pizza, 1 Cesar salad",
+                    "1 carrot cake, extra icing",
                     R.drawable.ic_baseline_cake_24
                 )
             )

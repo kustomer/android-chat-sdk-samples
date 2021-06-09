@@ -1,4 +1,4 @@
-# Kustomer Advanced Example App
+# Kustomer Chat v2 Sample App
 
 This example app demonstrates how to use Kustomer's Login and Describe functionality.
 
