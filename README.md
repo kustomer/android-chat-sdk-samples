@@ -14,7 +14,8 @@ This example app demonstrates how to use Kustomer's Login and Describe functiona
 The app has three screens, each composed of a Fragment and ViewModel. All calls to the Kustomer
 SDK can be found in ViewModel classes.
 
-#### Login - Allows logging in to the app to view an order history (any email/password combo will succeed),
+#### Login -
+- Allows logging in to the app to view an order history (any email/password combo will succeed),
 or continuing as guest. On successful login, the user is also logged in to Kustomer chat.Advanced
 
 #### Order History -
