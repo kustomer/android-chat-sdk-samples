@@ -48,8 +48,7 @@ class GuestFragment : Fragment() {
 
         setupAdapter()
         binding.run {
-            appTitle.text =
-                "${resources.getString(R.string.app_name)} v.${BuildConfig.VERSION_NAME}"
+            appTitle.text = resources.getString(R.string.app_name, BuildConfig.VERSION_NAME)
 
             viewModel.unreadCount.observe(viewLifecycleOwner, {
                 unreadCount.text = "$it Unread count"

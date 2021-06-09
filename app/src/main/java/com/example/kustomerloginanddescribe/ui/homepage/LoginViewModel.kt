@@ -45,7 +45,6 @@ class LoginViewModel : ViewModel() {
                     _navigateToOrderHistory.value = email
                 } else {
                     showSnackbar("Login failed")
-                    _navigateToOrderHistory.value = email
                 }
             }
         }

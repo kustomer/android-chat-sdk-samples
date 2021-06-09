@@ -27,7 +27,7 @@ class OrderHistoryViewModel : ViewModel() {
             if (conversationId != null) {
                 Kustomer.getInstance().openConversationWithId(conversationId) {
                     if (it is KusResult.Success) {
-                        showSnackbar("Open conversation sucess")
+                        showSnackbar("Open conversation success")
                     } else {
                         showSnackbar("Open conversation error")
                     }
