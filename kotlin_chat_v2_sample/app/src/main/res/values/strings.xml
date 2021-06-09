@@ -11,4 +11,5 @@
     <string name="get_help">Get Help</string>
     <string name="active_conversations">%d Active conversations</string>
     <string name="unread_count">%d Unread count</string>
+    <string name="initialization_error_message">Error initializing Kustomer SDK. \n \n Please validate API key entered in local.properties in the project. \n \n Refer README documentation on how to add API Key to local.properties</string>
 </resources>
