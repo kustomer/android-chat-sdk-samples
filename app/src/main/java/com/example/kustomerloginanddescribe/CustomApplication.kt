@@ -4,7 +4,7 @@ import android.app.Application
 import android.util.Log
 import com.kustomer.ui.Kustomer
 
-class KustomerApplication : Application() {
+class CustomApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 

@@ -37,9 +37,8 @@ class LoginViewModel : ViewModel() {
     // using your org secret key. For more information, see https://developer.kustomer.com/chat-sdk/v2-Android/docs/authentication
     private fun onLoginSucceeded(email: String) {
         viewModelScope.launch {
-            // TODO: This is an expired JWT for John Kustomer. Replace it with a valid JWT for your org.
-            val jwt =
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gS3VzdG9tZXIiLCJpYXQiOjE1MTYyMzkwMjJ9.QHTAo2csyHXacGIdrSZ2dDvxxqrOR55OEEgQ40ZhW7g"
+            // TODO: This is an expired JWT for John Kustomer. Replace it with a valid JWT for your organization.
+            val jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gSmFuZSIsImlhdCI6MTUxNjIzOTAyMn0.5UDLuH0iCAdu-9bh4bs5549IPE2ScJdC30GZChKUU_E"
             Kustomer.getInstance().logIn(jwt) {
                 if (it is KusResult.Success) {
                     showSnackbar("Login success")

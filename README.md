@@ -4,25 +4,43 @@ This example app demonstrates how to use Kustomer's Login and Describe functiona
 
 ## Project Structure
 
-    .
-    ├── manifests
-        ├── AndroidManifest.xml  # App manifest file where Application class is defined
-    ├── java/com.example.kustomerloginanddescribe
-    │   ├── ui.home
-    │       ├── itemviews  # Custom views for the example app
-    │       ├── HomepageFragment.kt   # A fragment to launch and interact with the Kustomer SDK
-    │       ├── HomepageViewModel.kt  # ViewModel that contains most of the calls to the Kustomer SDK
-    │   ├── utils                     # Utils and miscellaneous code for the example app
-    │   ├── KustomerApplication.kt    # Custom application class where KustomerSDK is initialized
-    │   ├── MainActivity.kt           # Entry point to the example app
-    └── ...
+### SDK Initialization
+- `build.gradle(:app)`` - includes the dependency for the Kustomer Chat SDK
+- `CustomApplication.kt` - the app's Application override where the Kustomer SDK is instantiated
+- `AndroidManifest.xml` - declares the use of `CustomerApplication` in the app
+
+### App functionality
+
+The app has three screens, each composed of a Fragment and ViewModel. All calls to the Kustomer
+SDK can be found in ViewModel classes.
+
+####Login - Allows logging in to the app to view an order history (any email/password combo will succeed),
+or continuing as guest. On successful login, the user is also logged in to Kustomer chat.Advanced
+
+####Order History -
+    - Describes the customer with their email address
+
+    - Shows order details for three orders. Each order has a "Get Help" button that will
+    open a Kustomer conversation and describe that conversation with the order number.
+
+    - Here we also create an in-memory map of order number to conversation ID, so the first tap on "Get help"
+    will open a new conversation, but subsequent taps will open the existing conversation for that order
+
+####Guest - Shows some basic interactions with the Kustomer SDK
+    - Open the Kustomer Chat widget with your organization's default settings for whether to show the
+    knowledge base, chat, or both
+
+    - Open a new conversation
+
+    - Open the Kustomer Chat widget with chat only, regardless of your organization's settings
+
+    - Open the Kustomer Chat widget with knowledge base only, regardless of your organization's settings
+
+    - Toggle between light mode and dark mode
 
 ## Running the project
 1. Clone this repository
 2. In a root-level `local.properties` file, add your Kustomer API key as below. This API key must
 have `org.tracking` level permissions.
 `apiKey = {your API key}`
-2. In a root-level `local.properties` file, add your Organization's secret key as below. This is
-used to sign JWT tokens to login users.
-`jwtSecret = {your secret key}`
-Your org secret key is available from https://{your-org}.api.kustomerapp.com/v1/auth/customer/settings
+3. To test the login functionality, generate a JWT (more details noted in the comments for LoginViewModel.onLoginSucceeded)

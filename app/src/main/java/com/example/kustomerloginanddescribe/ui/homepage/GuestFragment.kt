@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.example.kustomerloginanddescribe.KustomerApplication
+import com.example.kustomerloginanddescribe.CustomApplication
 import com.example.kustomerloginanddescribe.R
 import com.example.kustomerloginanddescribe.databinding.FragmentGuestBinding
 import com.example.kustomerloginanddescribe.ui.homepage.itemviews.BlankItemView
@@ -28,7 +28,7 @@ class GuestFragment : Fragment() {
     private var _binding: FragmentGuestBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var application: KustomerApplication
+    private lateinit var application: CustomApplication
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,7 +44,7 @@ class GuestFragment : Fragment() {
         viewModelFactory = GuestViewModelFactory()
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(GuestViewModel::class.java)
-        application = requireActivity().application as KustomerApplication
+        application = requireActivity().application as CustomApplication
 
         setupAdapter()
         binding.run {

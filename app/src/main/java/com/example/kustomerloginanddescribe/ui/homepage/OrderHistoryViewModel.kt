@@ -21,9 +21,11 @@ class OrderHistoryViewModel : ViewModel() {
 
     fun openExistingOrNewOrderChat(orderNumber: Int) {
         viewModelScope.launch {
-            val convoId = orderToConversationMap[orderNumber]
-            if (convoId != null) {
-                Kustomer.getInstance().openConversationWithId(convoId) {
+            val conversationId = orderToConversationMap[orderNumber]
+
+            // If we've opened a conversation for this order before, open the existing conversation
+            if (conversationId != null) {
+                Kustomer.getInstance().openConversationWithId(conversationId) {
                     if (it is KusResult.Success) {
                         showSnackbar("Open conversation sucess")
                     } else {
@@ -31,12 +33,20 @@ class OrderHistoryViewModel : ViewModel() {
                     }
                 }
             } else {
+                // If this is the first time chatting about this order, open a new conversation
                 Kustomer.getInstance().openNewConversation { conversationResult ->
                     Log.d("openNew", conversationResult.dataOrNull?.id ?: "")
                     if (conversationResult is KusResult.Success) {
                         orderToConversationMap[orderNumber] = conversationResult.data.id
 
                         viewModelScope.launch {
+
+                            // Once the conversation is created successfully, we describe the conversation
+                            // with the order number
+                            //
+                            // *NOTE* this call to describe will fail if you do not have a Klass orderID
+                            // of type Text defined in your org. You can change this key and value to better
+                            // fit your implementation
                             Kustomer.getInstance().describeConversation(
                                 conversationResult.data.id,
                                 mapOf(Pair("orderId", orderNumber))
@@ -56,6 +66,7 @@ class OrderHistoryViewModel : ViewModel() {
 
     fun describeCustomer(email: String) {
         viewModelScope.launch {
+            // Describe the customer with their email address
             Kustomer.getInstance()
                 .describeCustomer(KusCustomerDescribeAttributes(emails = listOf(KusEmail(email)))) {
                     if (it is KusResult.Success) {
