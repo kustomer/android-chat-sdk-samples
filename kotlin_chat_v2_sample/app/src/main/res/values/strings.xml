@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Kustomer Chat Sample v.%s</string>
-    <string name="dark_mode">Dark Mode</string>
     <string name="log_in">Log In</string>
     <string name="email">Email</string>
     <string name="log_out">Log Out</string>

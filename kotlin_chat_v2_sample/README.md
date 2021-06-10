@@ -48,10 +48,13 @@ knowledge base, chat, or both
 ![Guest Screen](./screenshots/guest_screen.png?raw=true "Guest Screen")
 
 ## Running the project
+### Note: Project requires Android Studio 4.2 or higher
 1. Clone this repository
-2. In a root-level `local.properties` file, add your Kustomer API key as below. This API key must
+2. In a root-level `local.properties` file, add your Kustomer API key as below without quotes. This API key must
 have `org.tracking` level permissions.
-`apiKey = {your API key}`
+
+![local.properties API Key](./screenshots/api_key_example.png?raw=true "local.properties API Key")
+
 3. To test the login functionality, generate a valid JWT with our org's secret key and paste it in to
 the `jwt` value in `LoginViewModel.kt`. For testing, you can generate a JWT by doing the following:
     - Go to https://jwt.io/
