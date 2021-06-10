@@ -22,6 +22,7 @@ class CustomApplication : Application() {
                     Log.d("KustomerApplication", "Kustomer initialized: ${it.dataOrNull}")
 
                     if (it is KusResult.Success) {
+                        // Register for push notifications once Kustomer SDK has initialized successfully
                         Kustomer.getInstance().registerDevice()
                     }
                 }
