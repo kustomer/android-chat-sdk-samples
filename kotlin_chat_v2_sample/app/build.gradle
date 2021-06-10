@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'androidx.navigation.safeargs'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -9,7 +10,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.kustomerloginanddescribe"
+        applicationId "com.example.kotlin_chat_v2_sample"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
