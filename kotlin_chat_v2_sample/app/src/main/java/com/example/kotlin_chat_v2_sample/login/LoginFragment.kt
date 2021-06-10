@@ -1,11 +1,11 @@
-package com.example.kotlin_chat_v2_sample.ui.homepage
+package com.example.kotlin_chat_v2_sample.login
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.kotlin_chat_v2_sample.R
 import com.example.kotlin_chat_v2_sample.databinding.LoginFragmentBinding
@@ -40,8 +40,9 @@ class LoginFragment : Fragment() {
             viewModel.navigateToOrderHistory.observe(viewLifecycleOwner, {
                 if (it != null) {
                     val action =
-                        LoginFragmentDirections
-                            .actionLoginFragmentToOrderHistoryFragment(emailEt.text.toString())
+                        LoginFragmentDirections.actionLoginFragmentToOrderHistoryFragment(
+                            emailEt.text.toString()
+                        )
                     findNavController().navigate(action)
                     viewModel.loginEventComplete()
                 }
@@ -50,8 +51,7 @@ class LoginFragment : Fragment() {
             viewModel.navigateToGuestScreen.observe(viewLifecycleOwner, {
                 if (true == it) {
                     val action =
-                        LoginFragmentDirections
-                            .actionLoginFragmentToGuestFragment()
+                        LoginFragmentDirections.actionLoginFragmentToGuestFragment()
                     findNavController().navigate(action)
                     viewModel.navigateToGuestScreenComplete()
                 }

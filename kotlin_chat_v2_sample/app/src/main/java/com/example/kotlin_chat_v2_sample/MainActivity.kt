@@ -10,7 +10,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+
+        val app = application as CustomApplication
+
+        if (app.isMissingAPIKey) {
+            setContentView(R.layout.activity_missing_apikey)
+        } else {
+
+            //Loading Login view
+            binding = ActivityMainBinding.inflate(layoutInflater)
+            setContentView(binding.root)
+        }
     }
 }
