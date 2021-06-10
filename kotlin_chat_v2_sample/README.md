@@ -63,9 +63,3 @@ the `jwt` value in `LoginViewModel.kt`. For testing, you can generate a JWT by d
     language of your choice or a tool like https://www.epochconverter.com/
     - Paste in your org's secret key from `https://{your-org}.kustomerapp.com/v1/auth/customer/settings`
 ![JWT Generator](./screenshots/jwt_generation.png?raw=true "JWT Generator")
-
-4. If you are using this sample to test push notifications, you must replace `google-services.json` with a copy of a valid
-`google-services.json` file and change the value of `"package_name"` to `"com.example.kotlin_chat_v2_sample"`. If not testing
-push notifications, you can omit this step.
-
-
