@@ -82,9 +82,6 @@ class OrderHistoryViewModel : ViewModel() {
         viewModelScope.launch {
             Kustomer.getInstance().logOut()
 
-            // Deregister on logout to ensure that push notifications aren't sent if user isn't authenticated
-            Kustomer.getInstance().deregisterDeviceForPushNotifications()
-
             // Handle your app's normal logout functionality
         }
     }
