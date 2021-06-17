@@ -33,7 +33,7 @@ The Order History screen:
 - Describes a customer based on the email address of the customer
 - Shows order details for three orders
     - Each order shows a Get Help button that opens a Kustomer conversations and describes that conversation with the order number           
-      * **Note**: The sample code calls `Kustomer.getInstance().describeConversation()` with a conversation attribute named `orderId` and a string value to demonstrate describing a conversation. This call will fail if your organization does not have an `orderId` attribute defined for conversations. Feel free to update the call to describe to use an attribute defined by your org.
+      * **Note**: The sample code calls `Kustomer.getInstance().describeConversation()` with a conversation attribute named `orderId` and a string value to demonstrate describing a conversation with a [custom attribute](https://developer.kustomer.com/chat-sdk/v2-Android/docs/describe-conversation#use-custom-attributes). This call is expected to fail and show an error toast as-is. To test the `describeConversation` functionality, replace the `orderId` attribute with a custom conversation attribute for your org.
 - Creates an in-memory map of the order number to the conversation ID
     - The first tap on Get Help opens a new conversation, but subsequent taps open the existing conversation for that order
 
