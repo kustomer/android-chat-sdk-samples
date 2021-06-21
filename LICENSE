@@ -1,15 +1,35 @@
-Copyright 2021 KUSTOMER, INC.
-Licensed under the Apache License, Version 2.0 (the “License”);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an “AS IS” BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and
-limitations under the License.
-ADDITIONAL TERMS
-The following additional clauses are applicable to Kustomer’s sample applications that have been published on public software repositories under Apache License, Version 2.0 (“Sample Apps”).
-1. Use of Sample Apps: In connection with the License granted to you in the Sample Apps, you have the right to access and use the APIs made available to
-you as a part of the Sample Apps, provided that your right to access and use such APIs is also subject to the license, restrictions, guidelines and policies which are published, implemented and updated on our website at https://www.kustomer.com from time to time with respect to such APIs.
-2. Ownership of Intellectual Property: With the exception of the License granted above, Kustomer, Inc. owns all rights, title and interests in the Sample Apps. You agree that you will maintain and not remove, obscure or alter any proprietary rights notices (including copyright and trademark notices) that may be affixed to or contained within the Sample Apps.
-3. Reservation of rights: All rights not expressly provided to you herein are reserved.
+KUSTOMER LIMITED DISTRIBUTION LICENSE
+
+You (“Developer” or “You”) must read this Kustomer Limited Distribution License Agreement (this "Agreement") carefully and thoroughly before copying, downloading and/or using any software (“Software”) provided herewith. 
+
+BY COPYING, DOWNLOADING AND/OR USING ANY SOFTWARE, YOU ARE CONFIRMING YOUR ACCEPTANCE OF THE TERMS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT, THEN DO NOT COPY, DOWNLOAD OR USE THE SOFTWARE. IF YOU ARE USING THE SOFTWARE IN YOUR CAPACITY AS AN EMPLOYEE OR AGENT OF A COMPANY OR ORGANIZATION, THEN ANY REFERENCES TO THE “DEVELOPER” OR “YOU” IN THIS AGREEMENT SHALL REFER TO SUCH ENTITY AND NOT TO YOU IN YOUR PERSONAL CAPACITY. YOU WARRANT THAT YOU ARE AUTHORIZED TO LEGALLY BIND SUCH COMPANY OR ORGANIZATION. IF YOU ARE NOT SO AUTHORIZED, THEN NEITHER YOU NOR SUCH COMPANY OR ORGANIZATION MAY USE THE SOFTWARE IN ANY MANNER WHATSOEVER.
+
+1. Grant of License. Kustomer, Inc. (“Kustomer”) grants Developer a non-exclusive, royalty-free, limited license: (a) to use and reproduce the Software solely in connection with a product developed by Developer that is integrated with Kustomer’s CRM platform (a “Kustomer Integrated Product”), (b) to modify the source code version of the Software solely as necessary to implement such Software into a Kustomer Integrated Product and (c) to distribute (including by hosting and sublicensing) the Software solely in object or binary form only and as implemented in Kustomer Integrated Products. Developer shall not use the Software for any purpose other than as specifically authorized herein.
+
+2. Open Source Software Components. 
+
+       2.1	The Software includes certain third party open source and free software components (“Open Source Components”), each of which has its own copyright and its own license conditions (“Open Source License”). A list of included Open Source Components, their respective Open Source License and a link to the original source code corresponding to such Open Source Components can be found in the README file accompanying the Software provided herewith.
+
+       2.2	The Open Source Components are not subject to the terms and conditions of Section 1 (“Grant of License”), Section 4 (“Title”), Section 5 (“No Other Rights”) and Section 8 (“Termination”). Your license rights and obligations with respect to individual Open Source Components are defined by the terms of any applicable Open Source License; nothing in this Agreement limits Developer’s rights under, or grants Developer rights that supersede, the terms and conditions of any applicable Open Source License for the Open Source Components. 
+
+	   2.3 	The Open Source Components are provided "as is" by the third party licensors who disclaim all liabilities, damages, (even if they have been advised of the possibility of such damages), warranties, indemnities and other obligations of any kind, express or implied, with regard to the Open Source Components.
+
+3. Title. As between the parties, Kustomer retains full rights, title, and ownership including all patents, copyrights, trade secrets, trade names, trademarks, and other intellectual property rights in and to the Software. Developer agrees to take all reasonable steps to prevent unauthorized disclosure of the Software.
+
+4. No Other Rights. Except as expressly stated herein, this Agreement does not grant Developer, by implication, estoppels or otherwise, any rights to patents, copyrights, trade secrets, trade names, trademarks (whether registered or unregistered), or any other rights, franchises, or licenses in respect of the Software. Kustomer will not provide any support or maintenance for the Software. Developer will be solely responsible for supporting its customers, including resellers and end users.
+
+5. No Support and Disclaimer of Warranty. Kustomer is not obligated to furnish or make available to Developer any further information, software, technical information, know-how, show-how, bug-fixes, or support. Kustomer reserves the right to make changes to the Software without further notice. Kustomer IS PROVIDING THE SOFTWARE TO DEVELOPER "AS IS", "WITH ALL FAULTS", AND WITH NO WARRANTY WHATSOEVER. Kustomer MAKES NO WARRANTY THAT THE SOFTWARE IS COMPLETE, VERIFIED, OR VALIDATED. Kustomer IS MAKING NO REPRESENTATION THAT THE SOFTWARE IS FREE FROM ANY CLAIMS OF INFRINGEMENT. Kustomer MAKES NO WARRANTY WHATSOEVER, EXPRESS, IMPLIED, STATUTORY, CONTRACTUAL OR OTHERWISE WITH RESPECT TO THE SOFTWARE, AND EXPRESSLY DISCLAIMS ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON-INFRINGEMENT AND ANY WARRANTIES ARISING BY VIRTUE OF CUSTOM OF TRADE OR COURSE OF DEALING.
+
+6. Notice and Protection. Developer agrees not to remove or destroy any proprietary trademark or copyright markings or notices placed upon or contained within the Software or any related documentation.
+
+7. Export. Developer acknowledges that the certain laws and regulations may restrict the export and re-export of the Software. Developer will not export or re-export any Software (including the diskettes, related documentation and/or any hardware peripherals) in any form without the appropriate United States and foreign governmental approval.
+
+8. Termination. The license will automatically terminate if Developer fails to comply with any of the terms and conditions of this Agreement. Upon termination for any reason, Developer will immediately destroy all whole or partial copies of the Software, including all documentation.
+
+9. LIMITATION OF LIABILITY. IN NO EVENT SHALL Kustomer BE LIABLE TO DEVELOPER, DEVELOPER’S CUSTOMERS, OR ANY OTHER THIRD PARTY PERSON OR ENTITY CLAIMING THROUGH OR UNDER DEVELOPER FOR ANY LOSS OF PROFITS, INCOME, SAVINGS, OR ANY OTHER CONSEQUENTIAL, INCIDENTAL, SPECIAL, PUNITIVE, DIRECT OR INDIRECT DAMAGES (WHETHER IN AN ACTION IN CONTRACT, TORT OR BASED ON A WARRANTY), EVEN IF Kustomer HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  THESE LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF THE ESSENTIAL PURPOSE OF ANY LIMITED REMEDY.  IN NO EVENT SHALL THE LIABILITY OF Kustomer ARISING OUT OF OR RELATING TO THIS AGREEMENT EXCEED THE GREATER OF TEN U.S. DOLLARS (US $10).
+
+10. Bug Fixes; Improvements. In connection with Developer's use of the Software, if You make a modification to address a bug, unused or suboptimal code, over-complicated expressions or duplicate code or similar type improvement, Kustomer would appreciate receiving such improvements for permanent incorporation into the Software. Such improvements can be made through Github by submitting a pull request. To the extent You submit such code improvements, You hereby irrevocably assign to Kustomer all intellectual property rights to such Improvements.
+
+11. General. This Agreement and all transactions concluded hereunder shall be governed by the laws of the State of New York, as such laws are applied to contracts entered into and performed entirely in New York by New York residents. Any litigation relating to this Agreement shall be subject to the exclusive jurisdiction of the state courts located in New York County, New York, or the federal courts located in the Eastern District of New York. If any provision of this Agreement is held to be invalid, illegal or unenforceable, that provision shall be construed in such a manner that it becomes valid and enforceable and so as to reflect most closely the intent of the parties in agreeing upon the provision in the first place, and the remaining provisions of this Agreement shall continue in full force and effect and shall not in any way be affected or impaired by any such determination of invalidity, illegality or unenforceability.
+
+THIS AGREEMENT IS THE ENTIRE AND EXCLUSIVE AGREEMENT BETWEEN Kustomer AND DEVELOPER AND SUPERSEDES ALL PRIOR ORAL AND WRITTEN AGREEMENTS AND COMMUNICATIONS BETWEEN THE PARTIES PERTAINING TO THE SUBJECT MATTER OF THIS AGREEMENT. NO DIFFERENT OR ADDITIONAL TERMS WILL BE ENFORCEABLE AGAINST Kustomer UNLESS Kustomer GIVES ITS EXPRESS WRITTEN CONSENT, INCLUDING AN EXPRESS WAIVER OF THE TERMS OF THIS AGREEMENT.
