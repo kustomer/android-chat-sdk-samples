@@ -7,4 +7,36 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="wild_blue">#909CC2</color>
+    <color name="yale_blue">#084887</color>
+    <color name="dark_orange">#F58A07</color>
+    <color name="light_orange">#F9AB55</color>
+    <color name="ghost_white">#F7F5FB</color>
+
+
+    <color name="vermilion">#BF4E30</color>
+    <color name="laurel_green">#C6CCB2</color>
+    <color name="dark_green">#093824</color>
+    <color name="Aquamarine">#78FECF</color>
+
+
+    <!--    Uncomment below colors to see customized view-->
+
+<!--    <color name="kusColorHeader">@color/yale_blue</color>-->
+<!--    <color name="kusColorOnHeader">#FFFFFF</color>-->
+<!--    <color name="kusColorOnHeaderVariant">@color/light_orange</color>-->
+
+<!--    <color name="kusColorAgentBubble">#FFFFFF</color>-->
+<!--    <color name="kusColorOnAgentBubble">@color/light_orange</color>-->
+<!--    <color name="kusColorUrlLinkOnAgentBubble">@color/dark_orange</color>-->
+
+<!--    <color name="kusColorCustomerBubble">@color/dark_orange</color>-->
+<!--    <color name="kusColorOnCustomerBubble">#FFFFFF</color>-->
+<!--    <color name="kusColorUrlLinkOnCustomerBubble">#FFFFFF</color>-->
+
+<!--    <color name="kusColorPrimary">@color/yale_blue</color>-->
+<!--    <color name="kusColorOnPrimary">#FFFFFF</color>-->
+
 </resources>

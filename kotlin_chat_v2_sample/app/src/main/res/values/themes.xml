@@ -1,6 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!--    Sample Theme 1 -->
+
     <!-- Base application theme. -->
-    <style name="Theme.KustomerLoginAndDescribe" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="MyAppTheme" parent="MyAppPurpleTheme" />
+
+    <!--    Custom Color Themes-->
+    <style name="MyAppPurpleTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -14,31 +19,18 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="KusAppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="MyAppOrangeTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/vermilion</item>
+        <item name="colorPrimaryVariant">@color/laurel_green</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/Aquamarine</item>
+        <item name="colorSecondaryVariant">@color/dark_green</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-
-        <item name="kusColorPrimary">@color/kus_blue</item>
-        <item name="kusColorOnPrimary">@color/kus_white</item>
-        <item name="kusColorBackground">@color/kus_white_variant</item>
-        <item name="kusColorControlNormal">@color/kus_white</item>
-        <item name="kusColorSurface">@color/kus_white</item>
-        <item name="kusColorOnSurface">@color/kus_black</item>
-        <item name="kusColorSurfaceVariant">@color/kus_brownish_grey</item>
-
-        <item name="kusColorError">@color/kus_red</item>
-        <item name="kusColorListDivider">@color/kus_divider</item>
-        <item name="kusColorLightSurfaceVariant">@color/kus_light_grey</item>
-
-
-        <item name="android:textStyle">normal</item>
-
-        <item name="textAppearanceHeadline1">@style/KusTextAppearance.Headline</item>
-
-        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/kus_white</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-
-        <item name="android:listDivider">@drawable/kus_list_divider</item>
     </style>
-
 
 </resources>

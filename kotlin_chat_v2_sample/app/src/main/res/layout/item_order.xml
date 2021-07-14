@@ -35,7 +35,7 @@
 
     <Button
         android:id="@+id/help_button"
-        style="@style/KusWidget.TextButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/get_help"
