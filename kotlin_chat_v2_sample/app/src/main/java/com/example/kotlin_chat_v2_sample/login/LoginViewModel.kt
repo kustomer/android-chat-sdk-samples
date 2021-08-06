@@ -1,5 +1,6 @@
 package com.example.kotlin_chat_v2_sample.login
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -37,18 +38,29 @@ class LoginViewModel : ViewModel() {
     // For more information, see this project's README
     private fun onLoginSucceeded(email: String) {
         viewModelScope.launch {
-            // TODO: This is an expired JWT for email@kustomer.com. Replace it with a valid JWT for your organization.
             val jwt =
                 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtYWlsQGt1c3RvbWVyLmNvbSIsImlhdCI6MTYyMzI1Nzg2N30.ecGnTE8DT91P0U8jBUCEW1FgsQbrvH4SEXEv5s3dqcM"
-            Kustomer.getInstance().logIn(jwt) {
-                if (it is KusResult.Success) {
-                    showSnackbar("Login success")
-                    _navigateToOrderHistory.value = email
-                } else {
-                    showSnackbar("Login failed")
-                    // Continue to order history, though customer will not be logged in to chat
-                    _navigateToOrderHistory.value = email
+
+            val isAlreadyLoggedIn = Kustomer.getInstance().isLoggedIn(email)
+            Log.d("isLoggedIn", "Is customer logged in as $email = ${isAlreadyLoggedIn.dataOrNull}")
+
+            // Here we check whether the user is already logged in to Kustomer as the current user and only call login if they are not
+            if (isAlreadyLoggedIn.dataOrNull == false) {
+
+                // TODO: This is an expired JWT for email@kustomer.com. Replace it with a valid JWT for your organization.
+                Kustomer.getInstance().logIn(jwt) {
+                    if (it is KusResult.Success) {
+                        showSnackbar("Login success")
+                        _navigateToOrderHistory.value = email
+                    } else {
+                        showSnackbar("Login failed")
+                        // Continue to order history, though customer will not be logged in to chat
+                        _navigateToOrderHistory.value = email
+                    }
                 }
+            } else {
+                showSnackbar("Already logged in")
+                _navigateToOrderHistory.value = email
             }
         }
     }

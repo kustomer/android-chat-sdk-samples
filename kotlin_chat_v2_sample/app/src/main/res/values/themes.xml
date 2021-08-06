@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="KusAppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="KusAppTheme.Overlay." parent="KusAppTheme">
         <!-- Customize your theme here. -->
 
         <item name="kusColorPrimary">@color/kus_blue</item>
