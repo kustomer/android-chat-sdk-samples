@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.kustomer.chat:core:2.8.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/62183511c14ed8381fe305ba8dac1fd2/core-2.8.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/62183511c14ed8381fe305ba8dac1fd2/core-2.8.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/62183511c14ed8381fe305ba8dac1fd2/core-2.8.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
