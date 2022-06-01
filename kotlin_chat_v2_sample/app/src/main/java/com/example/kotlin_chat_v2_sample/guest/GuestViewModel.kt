@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
+import com.kustomer.core.models.KusPreferredView
 import com.kustomer.core.models.KusResult
-import com.kustomer.core.models.KusWidgetType
 import com.kustomer.core.models.chat.KusConversation
 import com.kustomer.ui.Kustomer
 
@@ -49,11 +49,11 @@ class GuestViewModel : ViewModel() {
     }
 
     fun openChatOnly() {
-        Kustomer.getInstance().open(KusWidgetType.CHAT_ONLY)
+        Kustomer.getInstance().open(KusPreferredView.CHAT_ONLY)
     }
 
     fun openKbOnly() {
-        Kustomer.getInstance().open(KusWidgetType.KB_ONLY)
+        Kustomer.getInstance().open(KusPreferredView.KB_ONLY)
     }
 
     fun toggleDarkMode(isChecked: Boolean) {
