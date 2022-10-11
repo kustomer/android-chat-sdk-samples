@@ -34,7 +34,7 @@ class OrderHistoryViewModel : ViewModel() {
                 }
             } else {
                 // If this is the first time chatting about this order, open a new conversation
-                Kustomer.getInstance().openNewConversation { conversationResult ->
+                Kustomer.getInstance().startNewConversation { conversationResult ->
                     Log.d("openNew", conversationResult.dataOrNull?.id ?: "")
                     if (conversationResult is KusResult.Success) {
                         orderToConversationMap[orderNumber] = conversationResult.data.id
