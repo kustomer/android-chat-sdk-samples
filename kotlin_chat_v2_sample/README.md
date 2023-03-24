@@ -9,6 +9,9 @@ This sample app demonstrates the login and describe functionality available for 
 - `CustomApplication.kt`: This is the Application override where the Kustomer SDK is instantiated for the app.
 - `AndroidManifest.xml`: This declares the use of `CustomerApplication.kt` in the app
 
+###
+
+
 ### App functionality
 
 The sample app features three screens. Each screen is composed of a `Fragment` and a `ViewModel`. All calls to the Kustomer
@@ -65,5 +68,7 @@ The Guest screen shows basic interactions with the Kustomer SDK:
        * **Note**: You can replace the `iat` value with the current Unix Epoch Time calculated with a free tool like [EpochConverter](https://www.epochconverter.com/) or with a language of your choice.
     3. In the VERIFY SIGNATURE section, replace `your-256-bit-secret` with the secret key you generated for your Kustomer organization from `https://{your-org}.api.kustomerapp.com/v1/auth/customer/settings` (replace `{your-org}` with the subdomain for your Kustomer organization).
      ![JWT Generator](./screenshots/jwt_generation.png?raw=true "JWT generator")
-
-4. Run the app on your emulator or test device. You can now use the screens described above to test the Chat SDK functionality.
+    4. Run the app on your emulator or test device. You can now use the screens described above to test the Chat SDK functionality.
+    5. If you are using this sample to test push notifications, you must replace `google-services.json` with a copy of a valid
+          `google-services.json` file and change the value of `"package_name"` to `"com.example.kotlin_chat_v2_sample"`. If not testing
+          push notifications, you can omit this step.
