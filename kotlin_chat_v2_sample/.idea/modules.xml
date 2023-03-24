@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Kustomer_Chat_v2_Sample.iml" filepath="$PROJECT_DIR$/.idea/modules/Kustomer_Chat_v2_Sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Kustomer_Chat_v2_Sample.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Kustomer_Chat_v2_Sample.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Kustomer_Chat_v2_Sample.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Kustomer_Chat_v2_Sample.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Kustomer_Chat_v2_Sample.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Kustomer_Chat_v2_Sample.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Kustomer_Chat_v2_Sample.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Kustomer_Chat_v2_Sample.app.unitTest.iml" />
     </modules>
   </component>
 </project>
