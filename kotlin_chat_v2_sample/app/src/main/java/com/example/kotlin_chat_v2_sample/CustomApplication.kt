@@ -22,10 +22,6 @@ class CustomApplication : Application() {
                 val kustomerOptions = KustomerOptions.Builder()
                     .setLogLevel(KusLogOptions.KusLogOptionDebug).build()
                 // Always initialize the Kustomer SDK in your Application class
-                if (it is KusResult.Success) {
-                    // Register for push notifications once Kustomer SDK has initialized successfully
-                    Kustomer.getInstance().registerDevice()
-                }
 
                 Kustomer.init(
                     application = this,
@@ -33,6 +29,10 @@ class CustomApplication : Application() {
                     options = kustomerOptions
                 ) {
                     Log.d("KustomerApplication", "Kustomer initialized: ${it.dataOrNull}")
+                    if (it is KusResult.Success) {
+                        // Register for push notifications once Kustomer SDK has initialized successfully
+                        Kustomer.getInstance().registerDevice()
+                    }
                 }
             } catch (e: AssertionError) {
 
