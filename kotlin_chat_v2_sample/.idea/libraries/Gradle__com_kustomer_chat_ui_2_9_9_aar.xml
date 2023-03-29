@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.kustomer.chat:ui:2.9.9@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f5eee3c04b9a177d811466a16fa35fbe/ui-2.9.9/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f5eee3c04b9a177d811466a16fa35fbe/ui-2.9.9/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f5eee3c04b9a177d811466a16fa35fbe/ui-2.9.9/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
