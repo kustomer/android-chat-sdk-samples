@@ -44,6 +44,7 @@ class GuestViewModel : ViewModel() {
                         showSnackbar("New conversation created")
                     }
                     is KusResult.Error -> showSnackbar("New conversation creation error")
+                    else -> {}
                 }
             }
     }
