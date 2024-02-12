@@ -5,8 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
+import com.kustomer.core.models.KusInitialMessage
 import com.kustomer.core.models.KusPreferredView
 import com.kustomer.core.models.KusResult
+import com.kustomer.core.models.chat.KusChatMessageDirection
 import com.kustomer.core.models.chat.KusConversation
 import com.kustomer.ui.Kustomer
 
@@ -37,13 +39,15 @@ class GuestViewModel : ViewModel() {
     }
 
     fun openNewChat() {
+        val initialMessage = KusInitialMessage("Hey there! How can I help you?", KusChatMessageDirection.AGENT)
         Kustomer.getInstance()
-            .openNewConversation { result: KusResult<KusConversation> ->
+            .startNewConversation(initialMessage) { result: KusResult<KusConversation> ->
                 when (result) {
                     is KusResult.Success -> {
                         showSnackbar("New conversation created")
                     }
                     is KusResult.Error -> showSnackbar("New conversation creation error")
+                    else -> {}
                 }
             }
     }
