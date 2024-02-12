@@ -39,9 +39,9 @@ class GuestViewModel : ViewModel() {
     }
 
     fun openNewChat() {
-        val initialMessage = KusInitialMessage("Hey there! this is an initial message!", KusChatMessageDirection.AGENT)
+        val initialMessage = KusInitialMessage("Hey there! How can I help you?", KusChatMessageDirection.AGENT)
         Kustomer.getInstance()
-            .startNewConversation(initialMessage, title = "Emre's title") { result: KusResult<KusConversation> ->
+            .startNewConversation(initialMessage) { result: KusResult<KusConversation> ->
                 when (result) {
                     is KusResult.Success -> {
                         showSnackbar("New conversation created")
