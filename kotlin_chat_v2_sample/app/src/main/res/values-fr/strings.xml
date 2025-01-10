@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Kustomer Chat Sample v.%s</string>
+    <string name="log_in">Log In</string>
+    <string name="email">Email</string>
+    <string name="log_out">Log Out</string>
+    <string name="welcome">Welcome, %s</string>
+    <string name="fake_email_hint">fake@email.com</string>
+    <string name="fake_password_hint">fake password</string>
+    <string name="log_in_as_guest">Log In as Guest</string>
+    <string name="get_help">Get Help</string>
+    <string name="active_conversations">%d Active conversations</string>
+    <string name="unread_count">%d Unread count</string>
+    <string name="initialization_error_message">Error initializing Kustomer SDK. \n \n Please validate API key entered in local.properties in the project. \n \n Refer README documentation on how to add API Key to local.properties</string>
+    <string name="open_sdk">Open SDK</string>
+    <string name="open_sdk_caption">The widget will open based on your organization\'s display settings</string>
+    <string name="open_to_new_chat">Open to New Chat</string>
+    <string name="open_to_new_chat_caption">The Widget will open directly to a new chat thread</string>
+    <string name="open_as_chat_only">Open as Chat Only</string>
+    <string name="open_as_chat_only_caption">The Widget will open with only the chat screens available regardless of Org settings</string>
+    <string name="open_as_kb_only">Open as KB Only</string>
+    <string name="open_as_kb_only_caption">The Widget will open with only the KB screens available regardless of Org settings</string>
+    <string name="dark_mode">Dark Mode</string>
+</resources>

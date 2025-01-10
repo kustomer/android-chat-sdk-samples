@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kotlin_chat_v2_sample">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:name="com.example.kotlin_chat_v2_sample.CustomApplication"
         android:allowBackup="true"
@@ -9,11 +11,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.KustomerLoginAndDescribe">
+        android:theme="@style/Theme.KustomerLoginAndDescribe"
+        android:localeConfig="@xml/locales_config">
         <activity
             android:name="com.example.kotlin_chat_v2_sample.MainActivity"
             android:windowSoftInputMode="adjustResize"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
