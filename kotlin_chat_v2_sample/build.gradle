@@ -16,7 +16,6 @@ buildscript {
 
 allprojects {
     repositories {
-        // maven { url "https://s01.oss.sonatype.org/content/repositories/comkustomerchat-1171" }
         google()
         mavenCentral()
     }
