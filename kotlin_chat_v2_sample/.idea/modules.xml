@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Kustomer_Chat_v2_Sample.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Kustomer_Chat_v2_Sample.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Kustomer_Chat_v2_Sample.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Kustomer_Chat_v2_Sample.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Kustomer_Chat_v2_Sample.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Kustomer_Chat_v2_Sample.app.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.Kustomer_Chat_v2_Sample.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.Kustomer_Chat_v2_Sample.app.androidTest.iml" />
     </modules>
   </component>
 </project>
