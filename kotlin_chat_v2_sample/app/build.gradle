@@ -4,6 +4,8 @@ plugins {
     id 'androidx.navigation.safeargs'
 }
 
+ext.kustomer_chat_sdk_version = "3.0.0"
+
 android {
     compileSdkVersion 31
     buildToolsVersion "30.0.3"
@@ -15,6 +17,7 @@ android {
         versionCode 1
         versionName "1.0"
         buildConfigField "String", "API_KEY", "\"" + getApiKey() + "\""
+        resValue "string", "app_name", "Kustomer Chat Sample v$kustomer_chat_sdk_version"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,7 +48,7 @@ def getApiKey() {
 }
 
 dependencies {
-    implementation 'com.kustomer.chat:ui:3.0.0'
+    implementation "com.kustomer.chat:ui:$kustomer_chat_sdk_version"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.5.0'
