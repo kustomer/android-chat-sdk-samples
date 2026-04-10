@@ -1,6 +1,17 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+// Align transitive Netty (e.g. from Android Gradle Plugin) past CVEs in 4.1.34.Final — dependency-review / GHSA.
 buildscript {
     ext.kotlin_version = "1.9.24"
+    configurations.classpath {
+        resolutionStrategy {
+            eachDependency { details ->
+                if (details.requested.group == 'io.netty') {
+                    // buildscript runs before root `ext`; keep in sync with ext.nettyAlignVersion below
+                    details.useVersion('4.1.118.Final')
+                }
+            }
+        }
+    }
     repositories {
         google()
         mavenCentral()
@@ -11,6 +22,20 @@ buildscript {
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.0"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+    }
+}
+
+ext.nettyAlignVersion = '4.1.118.Final'
+
+subprojects { subproject ->
+    subproject.configurations.configureEach { configuration ->
+        configuration.resolutionStrategy {
+            eachDependency { details ->
+                if (details.requested.group == 'io.netty') {
+                    details.useVersion(rootProject.ext.nettyAlignVersion)
+                }
+            }
+        }
     }
 }
 
