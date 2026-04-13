@@ -1,6 +1,26 @@
+import org.gradle.util.internal.VersionNumber
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+// Align transitive Netty (e.g. from Android Gradle Plugin) past CVEs in 4.1.34.Final — dependency-review / GHSA.
+//
+// PR feedback: eachDependency has no details.require(). To enforce a *minimum* only, only call useVersion
+// when the requested version is missing or lower than the floor; leave newer transitives (e.g. 4.1.127) unchanged.
 buildscript {
     ext.kotlin_version = "1.9.24"
+    def nettyMin = '4.1.118.Final'
+    configurations.classpath {
+        resolutionStrategy {
+            eachDependency { details ->
+                if (details.requested.group == 'io.netty') {
+                    def cur = details.requested.version
+                    if (!cur || VersionNumber.parse(cur) < VersionNumber.parse(nettyMin)) {
+                        details.useVersion(nettyMin)
+                        details.because('Netty minimum 4.1.118.Final (CVE); newer versions left as requested')
+                    }
+                }
+            }
+        }
+    }
     repositories {
         google()
         mavenCentral()
@@ -11,6 +31,26 @@ buildscript {
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.0"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+    }
+}
+
+// Keep in sync with nettyMin inside buildscript {} above.
+ext.nettyMinVersion = '4.1.118.Final'
+
+subprojects { subproject ->
+    subproject.configurations.configureEach { configuration ->
+        configuration.resolutionStrategy {
+            eachDependency { details ->
+                if (details.requested.group == 'io.netty') {
+                    def cur = details.requested.version
+                    def min = rootProject.ext.nettyMinVersion
+                    if (!cur || VersionNumber.parse(cur) < VersionNumber.parse(min)) {
+                        details.useVersion(min)
+                        details.because('Netty minimum 4.1.118.Final (CVE); newer versions left as requested')
+                    }
+                }
+            }
+        }
     }
 }
 

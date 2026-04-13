@@ -1,8 +1,16 @@
 # android-chat-sdk-samples
+
+**What this is:** **Sample Android application(s)** for **testing and validating** the [**Kustomer Chat SDK for Android**](https://github.com/kustomer/customer-android-kotlin)—integration flows, session bootstrap over HTTP, and **PubNub** realtime in a real app shell. This repo is **not** the SDK library, not a substitute for the [Developer Portal](https://developer.kustomer.com/), and the bundled apps are **not** production-ready products as-is.
+
 A repository to hold sample apps using the Kustomer Chat SDK v2
 
-- [kotlin_chat_v2_sample](https://github.com/kustomer/android-chat-sdk-samples/tree/main/kotlin_chat_v2_sample): Sample app writen in Kotlin that highlights using the Kustomer Chat SDK.
+- [kotlin_chat_v2_sample](https://github.com/kustomer/android-chat-sdk-samples/tree/main/kotlin_chat_v2_sample): Sample app written in Kotlin that highlights using the Kustomer Chat SDK.
 
+## Chat Lifecycle
+
+Sample apps exercise the **Android chat SDK** end-to-end (HTTP + **PubNub**). Behavior and channel naming follow **chat-api**; see [pubnub.md](https://github.com/kustomer/chat-api/blob/master/pubnub.md).
+
+**See also:** [Chat ecosystem map — `CHAT_CONNECTIONS.md`](https://github.com/kustomer/chat-api/blob/master/docs/CHAT_CONNECTIONS.md) · [chat-api — Chat Lifecycle](https://github.com/kustomer/chat-api/blob/master/README.md#chat-lifecycle) · [customer-android-kotlin](https://github.com/kustomer/customer-android-kotlin)
 
 Requirements
 You need to have a Kustomer account as developer or customer to access the Kustomer Platform in order to use the sample apps. Please visit the [Kustomer website](https://kustomer.com) for more information.
